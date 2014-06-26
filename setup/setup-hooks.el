@@ -11,7 +11,7 @@
 (add-hook 'prog-mode-hook 'linum-mode)
 
 ;; eldoc
-(add-hook 'prog-mode-hook 'eldoc-mode)
+(add-hook 'prog-mode-hook 'turn-on-eldoc-mode)
 
 ;; whitespace
 (add-hook 'prog-mode-hook 'whitespace-mode)

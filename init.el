@@ -72,6 +72,9 @@
 ;; projectile
 (require 'setup-projectile)
 
+;; cider
+(require 'setup-cider)
+
 ;; hooks
 (require 'setup-hooks)
 
