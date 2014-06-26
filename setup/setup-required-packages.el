@@ -1,26 +1,11 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
-(defvar packages '(better-defaults
-                   clojure-mode
-                   clojure-test-mode
-                   rainbow-delimiters
-                   cider
-                   smartparens
-                   flx-ido
-                   ido-vertical-mode
-                   ido-ubiquitous
-                   smex
-                   diminish
-                   undo-tree
-                   projectile
-                   perspective))
-
-(dolist (p packages)
+(dolist (p required-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 

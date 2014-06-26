@@ -13,7 +13,23 @@
 ;; Setup path
 (require 'setup-path)
 
-;; require packages
+;; required packages
+(defvar required-packages '(better-defaults
+                            clojure-mode
+                            clojure-test-mode
+                            rainbow-delimiters
+                            cider
+                            smartparens
+                            flx-ido
+                            ido-vertical-mode
+                            ido-ubiquitous
+                            smex
+                            ace-window
+                            diminish
+                            undo-tree
+                            projectile
+                            perspective))
+
 (require 'setup-required-packages)
 
 ;; Appearance
