@@ -20,6 +20,7 @@
                             rainbow-delimiters
                             cider
                             smartparens
+                            auto-complete
                             flx-ido
                             ido-vertical-mode
                             ido-ubiquitous
@@ -74,6 +75,9 @@
 
 ;; cider
 (require 'setup-cider)
+
+;; auto-complete
+(require 'setup-autocomplete)
 
 ;; hooks
 (require 'setup-hooks)
