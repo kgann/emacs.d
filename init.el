@@ -25,6 +25,7 @@
                             ido-ubiquitous
                             smex
                             ace-window
+                            magit
                             diminish
                             undo-tree
                             projectile

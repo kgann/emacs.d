@@ -6,5 +6,7 @@
 
 (global-set-key [remap other-window] 'ace-window)
 
+(global-set-key (kbd "C-c b") 'magit-blame-mode)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here
