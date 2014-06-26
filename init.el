@@ -15,22 +15,22 @@
 
 ;; required packages
 (defvar required-packages '(better-defaults
+                            ace-window
+                            auto-complete
+                            cider
                             clojure-mode
                             clojure-test-mode
-                            rainbow-delimiters
-                            cider
-                            smartparens
-                            auto-complete
-                            flx-ido
-                            ido-vertical-mode
-                            ido-ubiquitous
-                            smex
-                            ace-window
-                            magit
                             diminish
-                            undo-tree
+                            flx-ido
+                            ido-ubiquitous
+                            ido-vertical-mode
+                            magit
+                            perspective
                             projectile
-                            perspective))
+                            rainbow-delimiters
+                            smartparens
+                            smex
+                            undo-tree))
 
 (require 'setup-required-packages)
 

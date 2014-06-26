@@ -1,7 +1,8 @@
 (require 'smartparens-config)
 
-(smartparens-global-mode 1)
-(show-smartparens-global-mode 1)
+(sp-use-smartparens-bindings)
+(smartparens-global-mode t)
+(show-smartparens-global-mode t)
 
 (provide 'setup-smartparens)
 ;; setup-smartparens ends here
