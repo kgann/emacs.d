@@ -8,5 +8,7 @@
 
 (global-set-key (kbd "C-c b") 'magit-blame-mode)
 
+(global-set-key (kbd "C-h C-m") 'discover-my-major)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here

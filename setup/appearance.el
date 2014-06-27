@@ -11,6 +11,9 @@
 ;; Cursor
 (setq default-cursor-type 'bar)
 
+;; Scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+
 ;; Font
 (set-face-attribute 'default nil :family "Monaco" :height 140)
 

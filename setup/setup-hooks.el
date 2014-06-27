@@ -14,5 +14,8 @@
 ;; whitespace
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+;; diff-hl
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+
 (provide 'setup-hooks)
 ;; setup-hooks ends here

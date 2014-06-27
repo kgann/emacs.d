@@ -20,7 +20,10 @@
                             cider
                             clojure-mode
                             clojure-test-mode
+                            cljdoc
+                            diff-hl
                             diminish
+                            discover-my-major
                             flx-ido
                             ido-ubiquitous
                             ido-vertical-mode
@@ -30,7 +33,8 @@
                             rainbow-delimiters
                             smartparens
                             smex
-                            undo-tree))
+                            undo-tree
+                            volatile-highlights))
 
 (require 'setup-required-packages)
 
@@ -54,6 +58,9 @@
 ;; winner
 (winner-mode 1)
 
+;; diff-hl
+(global-diff-hl-mode 1)
+
 ;; emacs backup
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
@@ -75,6 +82,12 @@
 
 ;; cider
 (require 'setup-cider)
+
+;; volatile highlights
+(require 'setup-volatile-highlights)
+
+;; cljdoc
+(require 'cljdoc)
 
 ;; auto-complete
 (require 'setup-autocomplete)
