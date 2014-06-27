@@ -16,6 +16,7 @@
 ;; required packages
 (defvar required-packages '(better-defaults
                             ace-window
+                            ack-and-a-half
                             auto-complete
                             cider
                             clojure-mode
@@ -33,6 +34,7 @@
                             rainbow-delimiters
                             smartparens
                             smex
+                            sr-speedbar
                             undo-tree
                             volatile-highlights))
 
@@ -85,6 +87,9 @@
 
 ;; volatile highlights
 (require 'setup-volatile-highlights)
+
+;; sr-speedbar
+(require 'setup-sr-speedbar)
 
 ;; cljdoc
 (require 'cljdoc)

@@ -10,5 +10,7 @@
 
 (global-set-key (kbd "C-h C-m") 'discover-my-major)
 
+(global-set-key (kbd "s-s") 'sr-speedbar-toggle)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here
