@@ -25,6 +25,7 @@
                             diff-hl
                             diminish
                             discover-my-major
+                            expand-region
                             flx-ido
                             ido-ubiquitous
                             ido-vertical-mode
