@@ -2,7 +2,15 @@
 (add-to-list 'custom-theme-load-path
              (concat user-emacs-directory "themes"))
 
-(load-theme 'blackboard t)
+;; Solarized settings
+(setq solarized-distinct-fringe-background t)
+(setq solarized-high-contrast-mode-line t)
+(setq solarized-emphasize-indicators nil)
+(load-theme 'solarized-dark t)
+
+;(load-theme 'blackboard t)
+;(load-theme 'noctilux t)
+;(load-theme 'zenburn t)
 
 ;; Bell
 (setq visible-bell t)

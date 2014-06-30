@@ -35,6 +35,7 @@
                             rainbow-delimiters
                             smartparens
                             smex
+                            solarized-theme
                             sr-speedbar
                             undo-tree
                             volatile-highlights))
