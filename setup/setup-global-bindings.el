@@ -14,5 +14,7 @@
 
 (global-set-key (kbd "C-@") 'er/expand-region)
 
+(global-set-key (kbd "C-c r") 'revert-buffer)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here

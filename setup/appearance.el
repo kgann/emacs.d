@@ -6,6 +6,7 @@
 (setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line t)
 (setq solarized-emphasize-indicators nil)
+(setq x-underline-at-descent-line t)
 (load-theme 'solarized-dark t)
 
 ;(load-theme 'blackboard t)

@@ -63,7 +63,7 @@
 (winner-mode 1)
 
 ;; diff-hl
-(global-diff-hl-mode 1)
+;(global-diff-hl-mode 1)
 
 ;; emacs backup
 (setq backup-directory-alist `(("." . "~/.saves")))
