@@ -1,6 +1,7 @@
 ;; Load path
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path (concat user-emacs-directory "setup"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor"))
 
 ;; Splash
 (setq inhibit-startup-message t)

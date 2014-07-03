@@ -5,12 +5,12 @@
 
 (global-set-key (kbd "s-f") 'projectile-find-file)
 
+;(setq persp-initial-frame-name (projectile-project-name))
+(setq persp-initial-frame-name "m")
 (persp-mode)
 (require 'persp-projectile)
 
 (diminish 'projectile-mode)
-
-; mode-line-highlight
 
 (provide 'setup-projectile)
 ;; setup-projectile ends here

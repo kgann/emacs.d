@@ -1,6 +1,3 @@
-;; Add to load path
-(add-to-list 'load-path "~/.emacs.d/vendor/")
-
 ;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
   (let ((path-from-shell (shell-command-to-string "TERM=vt100 $SHELL -i -c 'echo $PATH'")))

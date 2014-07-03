@@ -4,8 +4,8 @@
 
 ;; Solarized settings
 (setq solarized-distinct-fringe-background t)
-(setq solarized-high-contrast-mode-line t)
-(setq solarized-emphasize-indicators nil)
+;(setq solarized-high-contrast-mode-line t)
+(setq solarized-emphasize-indicators t)
 (setq x-underline-at-descent-line t)
 (load-theme 'solarized-dark t)
 
