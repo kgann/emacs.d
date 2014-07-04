@@ -16,5 +16,11 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
+;; Resize
+(global-set-key (kbd "C-S-s-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-S-s-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-S-s-<down>") 'shrink-window)
+(global-set-key (kbd "C-S-s-<up>") 'enlarge-window)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here
