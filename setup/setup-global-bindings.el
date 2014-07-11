@@ -16,6 +16,8 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
+(global-set-key (kbd "C-c R") 'revert-all-buffers)
+
 ;; Resize
 (global-set-key (kbd "C-S-s-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-S-s-<right>") 'enlarge-window-horizontally)
