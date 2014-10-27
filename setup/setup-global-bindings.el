@@ -24,5 +24,14 @@
 (global-set-key (kbd "C-S-s-<down>") 'shrink-window)
 (global-set-key (kbd "C-S-s-<up>") 'enlarge-window)
 
+;; Multiple cursors
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; term
+(global-set-key (kbd "C-c t") 'visit-term-buffer)
+
 (provide 'setup-global-bindings)
 ;; setup-global-bindings ends here

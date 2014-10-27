@@ -25,8 +25,8 @@
                             auto-complete
                             cider
                             clojure-mode
-                            clojure-test-mode
                             cljdoc
+                            dash
                             diff-hl
                             diminish
                             discover-my-major
@@ -35,10 +35,13 @@
                             ido-ubiquitous
                             ido-vertical-mode
                             magit
+                            multiple-cursors
                             perspective
                             projectile
                             rainbow-delimiters
+                            slamhound
                             smartparens
+                            smart-mode-line
                             smex
                             solarized-theme
                             sr-speedbar
@@ -74,6 +77,9 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 
+;; autosave
+(setq auto-save-default nil)
+
 ;; smartparens
 (require 'setup-smartparens)
 
@@ -103,6 +109,9 @@
 
 ;; auto-complete
 (require 'setup-autocomplete)
+
+;; smart-mode-line
+(require 'setup-smart-mode-line)
 
 ;; hooks
 (require 'setup-hooks)

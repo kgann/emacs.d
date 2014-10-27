@@ -19,6 +19,7 @@
 
 ;; Cursor
 (setq default-cursor-type 'bar)
+(set-cursor-color "#ffffff")
 
 ;; Scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))

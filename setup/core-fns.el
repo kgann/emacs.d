@@ -30,5 +30,16 @@
         (revert-buffer t t t) )))
   (message "Refreshed open files.") )
 
+(defun visit-term-buffer ()
+  "Create or visit a terminal buffer."
+  (interactive)
+  (if (not (get-buffer "*term*"))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (term (getenv "SHELL")))
+    (switch-to-buffer-other-window "*term*")
+    (persp-add-buffer "*term*")))
+
 (provide 'core-fns)
 ;; core fns
