@@ -25,7 +25,7 @@
                             auto-complete
                             cider
                             clojure-mode
-                            cljdoc
+                            ;;cljdoc
                             dash
                             diff-hl
                             diminish
@@ -105,13 +105,17 @@
 (require 'setup-sr-speedbar)
 
 ;; cljdoc
-(require 'cljdoc)
+;;(require 'cljdoc)
 
 ;; auto-complete
 (require 'setup-autocomplete)
 
 ;; smart-mode-line
 (require 'setup-smart-mode-line)
+
+;; smex
+(require 'smex)
+(smex-initialize)
 
 ;; hooks
 (require 'setup-hooks)
