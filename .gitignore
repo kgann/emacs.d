@@ -2,4 +2,5 @@
 /backups
 /elpa
 /ac-dict
+.mc-lists.el
 projectile*

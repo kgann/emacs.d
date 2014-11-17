@@ -41,5 +41,12 @@
     (switch-to-buffer-other-window "*term*")
     (persp-add-buffer "*term*")))
 
+(defun custom-git-grep (&optional term)
+  "Uses vc-git-grep to search project root for `term'"
+  (interactive (list
+                (read-string (format "Search for (default `%s'): " (thing-at-point 'word))
+                             nil nil (thing-at-point 'word))))
+  (vc-git-grep term "*" (projectile-project-root)))
+
 (provide 'core-fns)
 ;; core fns
