@@ -2,5 +2,7 @@
 /backups
 /elpa
 /ac-dict
+/places
+ac-comphist.dat
 .mc-lists.el
 projectile*
