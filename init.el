@@ -70,6 +70,9 @@
 ;; winner
 (winner-mode 1)
 
+;; http://emacswiki.org/emacs/DeleteSelectionMode
+(delete-selection-mode 1)
+
 ;; diff-hl
 ;(global-diff-hl-mode 1)
 
