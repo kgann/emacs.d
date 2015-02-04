@@ -39,6 +39,7 @@
                             perspective
                             projectile
                             rainbow-delimiters
+                            restclient
                             slamhound
                             smartparens
                             smart-mode-line
@@ -72,6 +73,9 @@
 
 ;; http://emacswiki.org/emacs/DeleteSelectionMode
 (delete-selection-mode 1)
+
+;; restclient-mode
+(require 'restclient)
 
 ;; diff-hl
 ;(global-diff-hl-mode 1)
