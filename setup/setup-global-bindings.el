@@ -9,6 +9,7 @@
 (global-set-key [remap other-window] 'ace-window)
 
 (global-set-key (kbd "C-c b") 'magit-blame-mode)
+(global-set-key (kbd "C-c s") 'magit-status)
 
 (global-set-key (kbd "C-h C-m") 'discover-my-major)
 
