@@ -36,6 +36,7 @@
                             ido-vertical-mode
                             magit
                             multiple-cursors
+                            pixie-mode
                             perspective
                             projectile
                             rainbow-delimiters
