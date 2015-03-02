@@ -36,6 +36,7 @@
                             ido-vertical-mode
                             magit
                             multiple-cursors
+                            monokai-theme
                             pixie-mode
                             perspective
                             projectile

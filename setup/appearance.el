@@ -3,16 +3,17 @@
              (concat user-emacs-directory "themes"))
 
 ;; Solarized settings
-(setq solarized-distinct-fringe-background t)
-;(setq solarized-high-contrast-mode-line t)
-(setq solarized-emphasize-indicators t)
-(setq solarized-use-less-bold t)
-(setq x-underline-at-descent-line t)
-(load-theme 'solarized-dark t)
+;; (setq solarized-distinct-fringe-background t)
+;; ;(setq solarized-high-contrast-mode-line t)
+;; (setq solarized-emphasize-indicators t)
+;; (setq solarized-use-less-bold t)
+;; (setq x-underline-at-descent-line t)
+;; (load-theme 'solarized-dark t)
 
 ;(load-theme 'blackboard t)
 ;(load-theme 'noctilux t)
 ;(load-theme 'zenburn t)
+(load-theme 'monokai t)
 
 ;; Bell
 (setq visible-bell t)
