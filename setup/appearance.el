@@ -36,6 +36,10 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
+;; Linum
+(global-linum-mode 1)
+(setq linum-format " %d ")
+
 ;; Lines / Columns
 (setq-default column-number-mode t)
 (setq-default indicate-empty-lines t)

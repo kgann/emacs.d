@@ -30,9 +30,6 @@
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 
-;; linum
-(add-hook 'prog-mode-hook 'linum-mode)
-
 ;; whitespace
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
