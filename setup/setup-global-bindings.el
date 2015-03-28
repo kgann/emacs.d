@@ -1,15 +1,10 @@
 (global-set-key (kbd "C-c d") 'custom-duplicate-line)
 
-(global-set-key (kbd "C-c g") 'custom-git-grep)
-
 (global-set-key (kbd "M-x") 'smex)
 
 (global-set-key (kbd "C-a") 'custom-move-beginning-of-line)
 
 (global-set-key [remap other-window] 'ace-window)
-
-(global-set-key (kbd "C-c b") 'magit-blame-mode)
-(global-set-key (kbd "C-c s") 'magit-status)
 
 (global-set-key (kbd "C-h C-m") 'discover-my-major)
 
@@ -20,6 +15,15 @@
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
 (global-set-key (kbd "C-c R") 'revert-all-buffers)
+
+;; Git/Magit
+(define-prefix-command 'magit-map)
+(global-set-key (kbd "C-c g") 'magit-map)
+(define-key magit-map (kbd "s") 'magit-status)
+(define-key magit-map (kbd "g") 'custom-git-grep)
+(define-key magit-map (kbd "b") 'magit-blame-mode)
+(define-key magit-map (kbd "c") 'magit-checkout)
+(define-key magit-map (kbd "d") 'magit-diff)
 
 ;; Resize
 (global-set-key (kbd "C-S-s-<left>") 'shrink-window-horizontally)
