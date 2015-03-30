@@ -36,6 +36,8 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
+(set-face-attribute 'region nil :background "#67930F" :foreground "#C1F161")
+
 ;; Linum
 (global-linum-mode 1)
 (setq linum-format " %d ")
