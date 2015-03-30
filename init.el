@@ -1,11 +1,11 @@
 ;; Load path
-(add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path (concat user-emacs-directory "setup"))
 (add-to-list 'load-path (concat user-emacs-directory "vendor"))
 
 ;; config changes made through the customise UI will be stored here
 (setq custom-file (concat user-emacs-directory "custom.el"))
-(load custom-file)
+(if (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Splash
 (setq inhibit-startup-message t)
@@ -21,7 +21,6 @@
 ;; required packages
 (defvar required-packages '(better-defaults
                             ace-window
-                            ack-and-a-half
                             auto-complete
                             cider
                             clojure-mode
