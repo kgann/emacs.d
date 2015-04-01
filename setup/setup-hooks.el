@@ -36,5 +36,8 @@
 ;; diff-hl
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
+;; sr-speedbar
+(add-hook 'speedbar-mode-hook (lambda () (linum-mode 0)))
+
 (provide 'setup-hooks)
 ;; setup-hooks ends here

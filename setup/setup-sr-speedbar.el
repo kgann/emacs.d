@@ -7,5 +7,7 @@
 ;; appear on left side
 (setq sr-speedbar-right-side nil)
 
+(setq speedbar-use-images nil)
+
 (provide 'setup-sr-speedbar)
 ;; setup-sr-speedbar ends here
