@@ -5,5 +5,5 @@
 /places
 ac-comphist.dat
 .mc-lists.el
-projectile*
+/projectile*
 custom.el
