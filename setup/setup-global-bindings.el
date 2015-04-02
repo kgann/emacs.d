@@ -8,7 +8,8 @@
 
 (global-set-key (kbd "C-h C-m") 'discover-my-major)
 
-(global-set-key (kbd "s-s") 'sr-speedbar-toggle)
+(global-set-key (kbd "s-S") 'sr-speedbar-toggle)
+(global-set-key (kbd "s-s") 'nv-speedbar-open-current-buffer-in-tree)
 
 (global-set-key (kbd "C-@") 'er/expand-region)
 

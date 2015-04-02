@@ -111,6 +111,7 @@
 
 ;; sr-speedbar
 (require 'setup-sr-speedbar)
+(require 'projectile-speedbar)
 
 ;; cljdoc
 ;;(require 'cljdoc)
