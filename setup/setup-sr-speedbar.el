@@ -1,3 +1,5 @@
+(defvar helm-alive-p nil)
+
 (setq sr-speedbar-width-x 30)
 
 (setq sr-speedbar-auto-refresh t)

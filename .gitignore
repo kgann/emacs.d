@@ -7,3 +7,4 @@ ac-comphist.dat
 .mc-lists.el
 /projectile*
 custom.el
+smex-items

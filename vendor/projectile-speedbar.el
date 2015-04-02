@@ -1,8 +1,6 @@
 (require 'speedbar)
 (require 'sr-speedbar)
 
-(defvar helm-alive-p nil)
-
 (defun nv-find-project-root ()
   (setq nv-current-dir (file-truename buffer-file-name))
   (while (not (file-exists-p (concat nv-current-dir ".git")))
