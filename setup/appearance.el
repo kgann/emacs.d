@@ -36,7 +36,12 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
+;; HIWIN
+(hiwin-activate)
+
+;; Monokai adjustments
 (set-face-attribute 'region nil :background "#67930F" :foreground "#C1F161")
+(set-face-background 'hiwin-face "#2e2f28")
 
 ;; Linum
 (global-linum-mode 1)
