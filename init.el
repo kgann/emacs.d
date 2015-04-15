@@ -61,7 +61,6 @@
 
 ;; diminish
 (require 'diminish)
-(diminish 'magit-auto-revert-mode)
 
 ;; OSX settings
 (when (eq system-type 'darwin)
