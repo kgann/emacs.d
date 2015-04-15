@@ -33,6 +33,8 @@
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 200))
 
+(setq help-window-select t)
+
 ;; Highlight current line
 (global-hl-line-mode 1)
 
