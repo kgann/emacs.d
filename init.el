@@ -31,7 +31,6 @@
                             discover-my-major
                             expand-region
                             flx-ido
-                            hiwin
                             ido-ubiquitous
                             ido-vertical-mode
                             magit
@@ -132,9 +131,6 @@
 
 ;; global key bindings
 (require 'setup-global-bindings)
-
-;; HIWIN
-(require 'hiwin)
 
 ;; undo-tree
 (global-undo-tree-mode)
