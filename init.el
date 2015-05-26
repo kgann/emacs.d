@@ -132,6 +132,8 @@
 ;; global key bindings
 (require 'setup-global-bindings)
 
+;; Magit
+(setq magit-last-seen-setup-instructions "1.4.0")
 ;; undo-tree
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)

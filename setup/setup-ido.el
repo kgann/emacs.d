@@ -2,6 +2,7 @@
 (defvar ido-cur-item nil)
 (defvar ido-default-item nil)
 (defvar ido-cur-list nil)
+(defvar ido-ubiquitous-debug-mode nil)
 
 (require 'ido)
 (require 'ido-ubiquitous)
@@ -11,7 +12,7 @@
 (ido-mode +1)
 (ido-ubiquitous-mode +1)
 (ido-vertical-mode 1)
-;(ido-everywhere t)
+(ido-everywhere t)
 (flx-ido-mode +1)
 
 (setq ido-enable-prefix nil)
@@ -20,6 +21,10 @@
 (setq ido-auto-merge-work-directories-length -1)
 (setq ido-use-faces nil)
 (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+
+;; Org / Magit modes
+(setq org-completion-use-ido t)
+(setq magit-completing-read-function 'magit-ido-completing-read)
 
 ;; ido files to ignore
 (add-to-list 'ido-ignore-files "\\.DS_Store")
