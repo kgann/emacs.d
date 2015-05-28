@@ -134,9 +134,13 @@
 
 ;; Magit
 (setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; undo-tree
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
+
+;; org mode
+(setq org-blank-before-new-entry nil)
 
 ;; program overrides
 (setq find-program "gfind")
