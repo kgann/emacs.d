@@ -147,6 +147,9 @@
 (setq insert-directory-program "gls")
 (setq dired-use-ls-dired t)
 
+;; ace window
+(setq aw-scope 'frame)
+
 ;; allow y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
