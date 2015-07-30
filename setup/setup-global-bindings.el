@@ -22,9 +22,7 @@
 (global-set-key (kbd "C-c g") 'magit-map)
 (define-key magit-map (kbd "s") 'magit-status)
 (define-key magit-map (kbd "g") 'custom-git-grep)
-(define-key magit-map (kbd "b") 'magit-blame-mode)
-(define-key magit-map (kbd "c") 'magit-checkout)
-(define-key magit-map (kbd "d") 'magit-diff)
+(define-key magit-map (kbd "b") 'magit-blame)
 
 ;; Resize
 (global-set-key (kbd "C-S-s-<left>") 'shrink-window-horizontally)
