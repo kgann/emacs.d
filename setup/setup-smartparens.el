@@ -1,7 +1,7 @@
 (require 'smartparens-config)
 
-;;(sp-use-smartparens-bindings
 (sp-use-paredit-bindings)
+(sp-use-smartparens-bindings)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 
