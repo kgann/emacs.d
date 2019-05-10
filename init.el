@@ -31,7 +31,7 @@
                             discover-my-major
                             expand-region
                             flx-ido
-                            ido-ubiquitous
+                            ido-completing-read+
                             ido-vertical-mode
                             magit
                             multiple-cursors
@@ -41,12 +41,10 @@
                             projectile
                             rainbow-delimiters
                             restclient
-                            slamhound
                             smartparens
                             smart-mode-line
                             smex
                             solarized-theme
-                            sr-speedbar
                             undo-tree
                             volatile-highlights))
 
@@ -60,6 +58,9 @@
 
 ;; diminish
 (require 'diminish)
+
+;; plantuml
+(require 'setup-plantuml-helpers)
 
 ;; OSX settings
 (when (eq system-type 'darwin)
@@ -109,10 +110,6 @@
 ;; volatile highlights
 (require 'setup-volatile-highlights)
 
-;; sr-speedbar
-(require 'setup-sr-speedbar)
-(require 'projectile-speedbar)
-
 ;; cljdoc
 ;;(require 'cljdoc)
 
@@ -155,3 +152,5 @@
 
 ;; GC tuning
 (setq gc-cons-threshold 20000000)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)

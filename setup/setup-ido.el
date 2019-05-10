@@ -5,14 +5,14 @@
 (defvar ido-ubiquitous-debug-mode nil)
 
 (require 'ido)
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 (require 'flx-ido)
 (require 'ido-vertical-mode)
 
-(ido-mode +1)
-(ido-ubiquitous-mode +1)
+(ido-mode 1)
+(ido-ubiquitous-mode 1)
 (ido-vertical-mode 1)
-(ido-everywhere t)
+(ido-everywhere 1)
 (flx-ido-mode +1)
 
 (setq ido-enable-prefix nil)

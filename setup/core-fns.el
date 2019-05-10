@@ -48,5 +48,10 @@
                              nil nil (thing-at-point 'word))))
   (vc-git-grep term "*" (projectile-project-root)))
 
+(defun dev-notes ()
+  (interactive)
+  (let ((notes (format-time-string "%m-%d-%Y")))
+    (find-file (expand-file-name (concat "~/Documents/dev-notes/" notes ".org")))))
+
 (provide 'core-fns)
 ;; core fns

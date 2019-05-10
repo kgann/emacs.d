@@ -1,0 +1,451 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/kgann/src/parkside/fix-gateway/src/" . "fix_gateway/")
+ ("/Users/kgann/src/parkside/command-processor/test/command_processor/" . "test/")
+ ("/Users/kgann/src/parkside/logger/" . "src/")
+ ("/Users/kgann/src/parkside/command-processor/test/" . "command_processor/")
+ ("/Users/kgann/src/parkside/s3-client/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/s3-client/src/s3/" . "client/")
+ ("/Users/kgann/src/parkside/s3-client/src/" . "s3/")
+ ("/Users/kgann/src/parkside/s3-client/" . "src/")
+ ("/Users/kgann/src/wm/dmp/dmp-playbook/roles/kafka/" . "tasks/")
+ ("/Users/kgann/src/wm/dmp/dmp-playbook/roles/" . "kafka/")
+ ("/Users/kgann/src/wm/dmp/dmp-playbook/" . "roles/")
+ ("/Users/kgann/src/wm/dmp/" . "dmp-playbook/")
+ ("/Users/kgann/src/wm/deployment-tools/" . "script/")
+ ("/Users/kgann/src/parkside/docker-datomic-private/" . "config/")
+ ("/Users/kgann/src/parkside/aws-ami/packer/kafka/roles/systemd/" . "handlers/")
+ ("/Users/kgann/src/parkside/aws-ami/packer/kafka/roles/kafka/" . "templates/")
+ ("/Users/kgann/src/parkside/aws-ami/packer/kafka/roles/" . "kafka/")
+ ("/Users/kgann/src/parkside/aws-ami/packer/kafka/" . "roles/")
+ ("/Users/kgann/src/parkside/aws-ami/packer/" . "kafka/")
+ ("/Users/kgann/src/parkside/aws-ami/" . "packer/")
+ ("/Users/kgann/src/parkside/e2e-test/test/e2e_test/customer/" . "subscription/")
+ ("/Users/kgann/src/parkside/fix-gateway/e2e-test/" . "fix_gateway/")
+ ("/Users/kgann/src/parkside/fix-gateway/" . "src/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/test/com/walmartlabs/ceds/ceds_service/" . "test/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/test/com/walmartlabs/ceds/" . "ceds_service/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/test/com/walmartlabs/" . "ceds/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/test/com/" . "walmartlabs/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/test/" . "com/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/test/com/walmartlabs/ceds/" . "client/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/test/com/walmartlabs/" . "ceds/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/test/com/" . "walmartlabs/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/test/" . "com/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/src/com/walmartlabs/ceds/" . "client/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/src/com/walmartlabs/" . "ceds/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/src/com/" . "walmartlabs/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/src/" . "com/")
+ ("/Users/kgann/src/wm/ceds/ceds-client/" . "src/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/src/com/walmartlabs/ceds/" . "ceds_service/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/src/com/walmartlabs/" . "ceds/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/src/com/" . "walmartlabs/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/src/" . "com/")
+ ("/Users/kgann/src/wm/ceds/ceds-service/" . "test/")
+ ("/Users/kgann/src/wm/ceds/" . "ceds-client/")
+ ("/Users/kgann/src/wm/" . "dmp/")
+ ("/Users/kgann/src/parkside/e2e-test/src/" . "e2e_test/")
+ ("/Users/kgann/src/parkside/e2e-test/test/e2e_test/" . "customer/")
+ ("/Users/kgann/src/parkside/e2e-test/test/" . "e2e_test/")
+ ("/Users/kgann/src/parkside/e2e-test/" . "test/")
+ ("/Users/kgann/src/parkside/uml-diagrams/plantuml/" . "customer/")
+ ("/Users/kgann/src/parkside/uml-diagrams/" . "plantuml/")
+ ("/Users/kgann/src/parkside/mock-graphql/node_modules/graphql-tools/" . "dist/")
+ ("/Users/kgann/src/parkside/mock-graphql/node_modules/" . "graphql-tools/")
+ ("/Users/kgann/src/parkside/mock-graphql/src/" . "schema/")
+ ("/Users/kgann/Downloads/simple_mocking_example/" . "src/")
+ ("/Users/kgann/Downloads/" . "simple_mocking_example/")
+ ("/Users/kgann/src/parkside/mock-graphql/" . "src/")
+ ("/Users/kgann/src/parkside/oidc/test/oidc/" . "pedestal/")
+ ("/Users/kgann/src/parkside/oidc/test/" . "oidc/")
+ ("/Users/kgann/src/parkside/datomic-client/src/" . "datomic_client/")
+ ("/Users/kgann/src/parkside/datomic-client/" . "src/")
+ ("/Users/kgann/src/parkside/notary-service/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/command-processor/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/kafka-streams/" . "src/")
+ ("/Users/kgann/src/parkside/kafka-client/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/account-service/test/account_service/rules/" . "customer/")
+ ("/Users/kgann/src/parkside/account-service/test/account_service/" . "rules/")
+ ("/Users/kgann/src/parkside/account-service/test/" . "account_service/")
+ ("/Users/kgann/src/parkside/kafka-admin/" . "src/")
+ ("/Users/kgann/src/parkside/kafka-client/test/" . "kafka_client/")
+ ("/Users/kgann/src/parkside/datomic-connect/src/" . "datomic_connect/")
+ ("/Users/kgann/src/parkside/datomic-connect/" . "src/")
+ ("/Users/kgann/src/namespacefy/test/" . "namespacefy/")
+ ("/Users/kgann/src/namespacefy/src/namespacefy/" . "impl/")
+ ("/Users/kgann/src/namespacefy/src/" . "namespacefy/")
+ ("/Users/kgann/src/namespacefy/" . "src/")
+ ("/Users/kgann/src/parkside/namespacefy/src/namespacefy/" . "impl/")
+ ("/Users/kgann/src/parkside/namespacefy/src/" . "namespacefy/")
+ ("/Users/kgann/src/parkside/namespacefy/test/" . "namespacefy/")
+ ("/Users/kgann/src/parkside/namespacefy/" . "src/")
+ ("/Users/kgann/src/parkside/notary-service/test/notary_service/" . "rules/")
+ ("/Users/kgann/src/parkside/notary-service/test/" . "notary_service/")
+ ("/Users/kgann/src/parkside/command-processor/resources/" . "duct/")
+ ("/Users/kgann/src/parkside/notary-service/src/notary_service/" . "rules/")
+ ("/Users/kgann/src/parkside/notary-service/src/" . "notary_service/")
+ ("/Users/kgann/src/parkside/notary-service/" . "src/")
+ ("/Users/kgann/src/parkside/datamodel/generated_src/enums/" . "commands_events/")
+ ("/Users/kgann/src/parkside/oidc/src/oidc/" . "pedestal/")
+ ("/Users/kgann/src/parkside/oidc/src/" . "oidc/")
+ ("/Users/kgann/src/parkside/oidc/" . "src/")
+ ("/Users/kgann/src/parkside/docker-parkside-runtime/" . ".github/")
+ ("/Users/kgann/src/parkside/fake-id/src/" . "fake_id/")
+ ("/Users/kgann/src/parkside/fake-id/" . "src/")
+ ("/Users/kgann/src/parkside/cognito-cljs/src/" . "cognito_cljs/")
+ ("/Users/kgann/src/parkside/cognito-cljs/" . "src/")
+ ("/Users/kgann/src/parkside/bdops-graphql/e2e-test/" . "bdops_graphql/")
+ ("/Users/kgann/src/parkside/datamodel/test/" . "generated_src/")
+ ("/Users/kgann/src/parkside/customer-graphql/e2e-test/" . "customer_graphql/")
+ ("/Users/kgann/src/parkside/validator/dev/resources/" . "localization/")
+ ("/Users/kgann/src/parkside/validator/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/l10n-dictionary/src/" . "l10n_dictionary/")
+ ("/Users/kgann/src/parkside/l10n-dictionary/resources/" . "l10n-dictionary/")
+ ("/Users/kgann/src/parkside/l10n-dictionary/" . "src/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/src/counterparty_broker_graphql/" . "lacinia/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/src/" . "counterparty_broker_graphql/")
+ ("/Users/kgann/src/parkside/command-producer/src/command_producer/" . "lacinia/")
+ ("/Users/kgann/src/parkside/command-producer/test/" . "command_producer/")
+ ("/Users/kgann/src/parkside/customer-graphql/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/kafka-client/src/" . "kafka_client/")
+ ("/Users/kgann/src/parkside/kafka-client/" . "src/")
+ ("/Users/kgann/src/parkside/lacinia-schema/test/lacinia_schema/" . "scalars/")
+ ("/Users/kgann/src/parkside/lacinia-schema/test/" . "lacinia_schema/")
+ ("/Users/kgann/src/parkside/lacinia-schema/src/lacinia_schema/" . "scalars/")
+ ("/Users/kgann/src/parkside/lacinia-resolvers/src/lacinia_resolvers/" . "customer/")
+ ("/Users/kgann/src/parkside/lacinia-resolvers/src/" . "lacinia_resolvers/")
+ ("/Users/kgann/src/parkside/lacinia-resolvers/" . "src/")
+ ("/Users/kgann/src/parkside/agreements/src/" . "agreements/")
+ ("/Users/kgann/src/parkside/agreements/" . "src/")
+ ("/Users/kgann/src/parkside/pksdctl/src/" . "pksdctl/")
+ ("/Users/kgann/src/parkside/pksdctl/test/" . "pksdctl/")
+ ("/Users/kgann/src/parkside/pksdctl/" . "src/")
+ ("/Users/kgann/src/parkside/command-producer/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/bdops-graphql/resources/com/" . "walmartlabs/")
+ ("/Users/kgann/src/parkside/bdops-graphql/resources/" . "com/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/test/counterparty_broker_graphql/" . "test/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/test/" . "counterparty_broker_graphql/")
+ ("/Users/kgann/src/parkside/bdops-graphql/dev/" . "resources/")
+ ("/Users/kgann/src/parkside/customer-graphql/test/customer_graphql/" . "resolver/")
+ ("/Users/kgann/src/parkside/customer-graphql/test/" . "customer_graphql/")
+ ("/Users/kgann/src/parkside/datamodel/dev/src/" . "datamodel/")
+ ("/Users/kgann/src/parkside/bdops-graphql/src/bdops_graphql/" . "lacinia/")
+ ("/Users/kgann/src/parkside/datamodel/umlaut/" . "customer/")
+ ("/Users/kgann/src/parkside/bdops-graphql/src/" . "bdops_graphql/")
+ ("/Users/kgann/src/parkside/bdops-graphql/" . "src/")
+ ("/Users/kgann/src/parkside/validator/src/" . "validator/")
+ ("/Users/kgann/src/parkside/validator/" . "src/")
+ ("/Users/kgann/src/parkside/datamodel/generated_src/" . "records/")
+ ("/Users/kgann/src/parkside/command-producer/src/" . "command_producer/")
+ ("/Users/kgann/src/parkside/command-producer/" . "src/")
+ ("/Users/kgann/src/parkside/datamodel/dev/" . "src/")
+ ("/Users/kgann/src/parkside/lacinia-schema/src/" . "lacinia_schema/")
+ ("/Users/kgann/src/parkside/lacinia-schema/" . "src/")
+ ("/Users/kgann/src/parkside/customer-graphql/resources/com/walmartlabs/lacinia/" . "pedestal/")
+ ("/Users/kgann/src/parkside/customer-graphql/resources/com/walmartlabs/" . "lacinia/")
+ ("/Users/kgann/src/parkside/customer-graphql/resources/com/" . "walmartlabs/")
+ ("/Users/kgann/src/parkside/customer-graphql/resources/" . "com/")
+ ("/Users/kgann/src/parkside/datamodel/resources/" . "datomic-schema/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/resources/com/walmartlabs/lacinia/" . "pedestal/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/resources/com/walmartlabs/" . "lacinia/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/resources/com/" . "walmartlabs/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/resources/" . "localization/")
+ ("/Users/kgann/src/parkside/account-service/src/account_service/rules/" . "customer/")
+ ("/Users/kgann/src/parkside/account-service/src/account_service/" . "rules/")
+ ("/Users/kgann/src/parkside/account-service/src/" . "account_service/")
+ ("/Users/kgann/src/parkside/account-service/" . "src/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/e2e-test/" . "counterparty_broker_graphql/")
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/" . "src/")
+ ("/Users/kgann/src/parkside/command-processor/src/" . "command_processor/")
+ ("/Users/kgann/src/parkside/command-processor/" . "src/")
+ ("/Users/kgann/src/parkside/datomic-client-peer/src/" . "datomic_client/")
+ ("/Users/kgann/src/parkside/datomic-client-peer/" . "src/")
+ ("/Users/kgann/src/parkside/customer-graphql/src/customer_graphql/" . "streamers/")
+ ("/Users/kgann/src/parkside/customer-graphql/src/" . "customer_graphql/")
+ ("/Users/kgann/src/parkside/customer-graphql/" . "resources/")
+ ("/Users/kgann/src/parkside/datomic-schema-loader/" . "src/")
+ ("/Users/kgann/src/parkside/repl-bootstrap/" . "src/")
+ ("/Users/kgann/src/parkside/datamodel/src/" . "custom_spec/")
+ ("/Users/kgann/src/parkside/datamodel/" . "snippets/")
+ ("/Users/kgann/src/parkside/" . "e2e-test/")
+ ("/Users/kgann/.emacs.d/" . "setup/")
+ ("/Users/kgann/" . ".emacs.d/")
+ ("/Users/kgann/src/dotfiles/" . ".bash/")
+ ("/Users/kgann/src/" . "parkside/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/kgann/.emacs.d/setup/"
+ "/Users/kgann/Documents/"
+ "/Users/kgann/src/parkside/e2e-test/test/e2e_test/customer/"
+ "/Users/kgann/src/parkside/mock-graphql/src/"
+ "/Users/kgann/src/parkside/mock-graphql/"
+ "/Users/kgann/src/parkside/bonsai/"
+ "/Users/kgann/src/parkside/command-processor/src/command_processor/"
+ "/Users/kgann/src/parkside/counterparty-broker-graphql/src/counterparty_broker_graphql/lacinia/"
+ "/Users/kgann/src/parkside/datamodel/"
+ "/Users/kgann/src/parkside/notary-service/src/notary_service/rules/"
+ "/Users/kgann/src/parkside/notary-service/"
+ "/Users/kgann/src/parkside/command-processor/"
+ "/Users/kgann/src/parkside/bdops-graphql/"
+ "/Users/kgann/src/parkside/bdops-graphql/src/bdops_graphql/lacinia/"
+ "/Users/kgann/src/parkside/customer-graphql/"
+ "/Users/kgann/src/parkside/e2e-test/src/e2e_test/"
+ "/Users/kgann/src/parkside/e2e-test/"
+ "/Users/kgann/bin/"
+ "/Users/kgann/src/parkside/repl-bootstrap/src/"
+ "/Users/kgann/src/parkside/account-service/src/account_service/rules/customer/"
+ "/Users/kgann/src/parkside/datamodel/snippets/"
+ "/Users/kgann/src/parkside/datamodel/generated_src/records/"
+ "/Users/kgann/src/parkside/datamodel/dev/src/datamodel/"
+ "/Users/kgann/src/parkside/fix-gateway/src/fix_gateway/"
+ "/Users/kgann/src/parkside/command-producer/src/command_producer/"
+ "/Users/kgann/src/parkside/kafka-client/src/kafka_client/"
+ "/Users/kgann/src/parkside/kafka-streams/src/"
+ "/Users/kgann/src/parkside/counterparty-broker-graphql/"
+ "/Users/kgann/src/parkside/datamodel/generated_src/enums/commands_events/"
+ "/Users/kgann/src/parkside/account-service/"
+ "/Users/kgann/src/parkside/docker-datomic-console-private/"
+ "/Users/kgann/src/parkside/docker-datomic-console/"
+ "/Users/kgann/src/parkside/docker-datomic/"
+ "/Users/kgann/src/parkside/oidc/src/oidc/pedestal/"
+ "/Users/kgann/src/parkside/counterparty-broker-graphql/resources/"
+ "/Users/kgann/src/parkside/counterparty-broker-graphql/src/counterparty_broker_graphql/"
+ "/Users/kgann/src/parkside/customer-graphql/resources/"
+ "/Users/kgann/src/parkside/customer-graphql/src/customer_graphql/"
+ "/Users/kgann/src/parkside/bdops-graphql/resources/"
+ "/Users/kgann/src/parkside/datamodel/resources/datomic-schema/"
+ "/Users/kgann/src/parkside/bdops-graphql/test/"
+ "/Users/kgann/src/parkside/command-processor/resources/duct/"
+ "/Users/kgann/src/parkside/notary-service/resources/"
+ "/Users/kgann/src/parkside/command-processor/test/command_processor/"
+ "/Users/kgann/src/parkside/notary-service/src/notary_service/"
+ "/Users/kgann/src/parkside/logger/src/"
+ "/Users/kgann/src/parkside/command-processor/resources/"
+ "/Users/kgann/src/parkside/oidc/"
+ "/Users/kgann/src/parkside/oidc/test/oidc/pedestal/"
+ "/Users/kgann/src/parkside/counterparty-broker-graphql/test/counterparty_broker_graphql/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "core-fns.el"
+ "parkside"
+ "agreements.clj"
+ "schema.js"
+ "server.js"
+ ".graphqlconfig"
+ "README.md"
+ "bonsai"
+ "docker-compose-datomic-dev.yml"
+ "docker-compose.yml"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/kgann/.emacs.d/" (23764 36215 931971 524000) "vendor/" "themes/" ".git/" "elpa/" ".gitignore" "init.el" "auto-save-list/" "custom.el" "setup/" "transient/" "projectile-bookmarks.eld" "smex-items" "ido.last" "ac-comphist.dat" "../" "./")
+
+ ("/Users/kgann/Documents/" (23764 31345 340553 948000) "bdops.graphql" "Zoom/" "customer.graphql" "Seller_Information_PL19123_-_SMITH.pdf" ".localized" ".DS_Store" "parkside" ".graphqlconfig" "../" "./")
+
+ ("/Users/kgann/src/parkside/mock-graphql/" (23765 29447 542118 360000) "src/" ".git/" "package.json" "package-lock.json" ".gitignore" "README.md" "node_modules/" ".graphqlconfig" ".babelrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/mock-graphql/src/" (23764 33726 626388 531000) "schema.js" "schema/" "server.js" "../" "./")
+
+ ("/Users/kgann/src/parkside/mock-graphql/src/schema/" (23727 52457 768133 106000) "bdops.graphql" "customer.graphql" "../" "./")
+
+ ("/Users/kgann/src/parkside/bonsai/" (23764 24212 653078 913000) "docker-compose-datamodel-test.yml" ".envrc_local" ".git/" "docker-compose.yml" "docker-compose-datomic-dev.yml" ".github/" ".env" ".gitignore" "bonsai" "img/" "README.md" "docker-compose-localhost-endpoint.yml" "datomic-data/" ".envrc" "docker-compose-cognito-auth.yml" "../" "./")
+
+ ("/Users/kgann/" (23764 23494 250440 114000) "src/" ".viminfo" ".bash_history" ".gitconfig" ".v8flags.7.0.276.38-node.18.2b94f4d93f12f4fce9d651cbcef0921d.json" ".cache/" "Downloads/" ".bash_profile" ".m2/" ".tmux.conf_pksd/" ".gitlibs/" ".babel.json" ".cpcache/" "Documents/" ".npm/" ".zoomus/" ".Trash/" "Applications/" ".vimrc/" "Movies/" ".ssh/" "plantuml.jar" ".ansible/" ".openvpn-connect.json" ".flutter" ".kube/" "Public/" ".lein/" ".cocoapods/" ".android/" ".emacs.d/" ".sdkman/" "Library/" "Desktop/" ".zsh_history/" ".pksdrc" ".clojure_history" ".saves/" "Pictures/" ".zshrc" ".bashrc" "bin/" ".bashrc_pksd" ".CFUserTextEncoding" ".DS_Store" ".vim/" ".node-gyp/" ".envrc" ".bash/" ".docker/" ".clojure/" "Music/" ".config/" ".envkey/" ".packer.d/" ".zshrc_pksd" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/src/counterparty_broker_graphql/" (23761 32798 524272 854000) "config.clj" "pedestal.clj" "lacinia/" "core.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/notary-service/" (23763 9097 783226 975000) "wercker.yml" "src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".cpcache/" "dev/" ".github/" ".env" ".gitignore" "load-schema/" "README.md" "run.sh" ".nrepl-port" ".nvimrc" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/notary-service/src/notary_service/rules/" (23764 9837 303977 506000) "register_agreement.clj" "acknowledge_agreement.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/src/command_processor/" (23763 2616 620657 743000) "datomic.clj" "handler.clj" "rule.clj" "exception_handler.clj" "dedupe.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/test/e2e_test/customer/" (23763 3453 953364 100000) "funding/" "kyc.clj" "agreements.clj" "subscription/" "registration.clj" "query.clj" "accounts.clj" "../" "./")
+
+ ("/Users/kgann/Downloads/" (23762 62763 960449 867000) "kafka_2.12-2.2.0/" "jmx_prometheus_javaagent-0.11.0.jar" "Offer_Shurburne___4_24_19.pdf" "Images Archived.pdf" "Caffeine.dmg" "Photos (1)/" "confluent-oss-4.1.1-2.11.tar.gz" "{5097B664-C597-4851-8AF0-025290FF7E14}.pdf" "flutter_macos_v1.2.1-stable.zip" "kafka_2.12-2.2.0.tgz" "Zoom.pkg" "OVPN.app/" "2011-0004.Basic-functions-in-Lisp.ppt" "QuipInstaller.dmg" "Alfred_3.8.1_961.dmg" "simple_mocking_example.zip" "Employment Agreement _Kyle Gann.pdf" "datomic.zip" "packer_1.4.0_darwin_amd64.zip" "datomic-pro-0.9.5786 (1).zip" "customer-application-statuses.png" "SpotifyInstaller.zip" "android-studio-ide-183.5452501-mac.dmg" "datomic-pro-0.9.5697/" "EnvKey-1.4.5.dmg" "client.ovpn" "client (1).ovpn" ".localized" "Photos (1).zip" "simple_mocking_example/" "1Password Emergency Kit A3-PHSN3A-parkside-securities.pdf" ".DS_Store" "WP-Disaster-Recovery-Apache-Kafka.pdf" "confluent-4.1.1/" "Photos.zip" "prep-config.txt" "OVPN.zip" "ci.yaml" "simple_mocking_example (1).zip" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/src/bdops_graphql/" (23715 44248 461175 546000) "config.clj" "pedestal.clj" "lacinia/" "core.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/src/" (23705 9874 402995 810000) "bdops_graphql/" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/test/e2e_test/" (23738 5616 886367 960000) "customer/" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/test/" (23736 34900 525623 952000) "e2e_test/" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/src/e2e_test/" (23752 36494 519718 438000) "target.clj" "http.clj" "subscription.clj" "runner.clj" "core.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/src/" (23736 34900 524024 512000) "e2e_test/" "../" "./")
+
+ ("/Users/kgann/src/parkside/e2e-test/" (23751 6089 847901 828000) "wercker.yml" "src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".cpcache/" ".github/" ".env" ".gitignore" "README.md" "run.sh" ".nrepl-port" ".nvimrc" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/repl-bootstrap/src/" (23747 2994 138929 488000) "user.clj" "dev.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/repl-bootstrap/" (23747 2994 138500 975000) "src/" ".envrc_local" ".git/" ".github/" ".gitignore" "README.md" "deps.edn" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/pksd/" (23735 12632 398435 871000) ".envrc_local" ".git/" ".gitlibs/" ".github/" "pksd" ".gitignore" "README.md" ".envrc" "../" "./")
+
+ ("/Users/kgann/bin/" (23741 58873 745116 284000) "packer" "pksd" "bonsai" "ec" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/snippets/" (23761 56130 214367 591000) "order-command.mustache" "quote-model.mustache" "stock-model.mustache" "fund-model.mustache" "locale-model.mustache" "account-model.mustache" "books-records-model.mustache" "customer-command.mustache" "iso8601-datetime-annotations.mustache" "trade-command.mustache" "counterparty-broker-model.mustache" "footer.mustache" "trade-model.mustache" "taxform-model.mustache" "command-processor-model.mustache" "header.mustache" "common-model.mustache" "acknowledgement-command.mustache" "currency-model.mustache" "s3-model.mustache" "acknowledgement-model.mustache" "order-model.mustache" "statement-model.mustache" "customer-model.mustache" "optional-iso8601-datetime-annotations.mustache" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/" (23761 56194 432823 212000) "wercker.yml" "src/" "load-datomic-peer-schema.sh" "generated_src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".cpcache/" "dev/" "templates/" ".github/" ".gitignore" "README.md" "run.sh" ".nrepl-port" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "datomic-socks-proxy" "snippets/" "umlaut/" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/generated_src/records/" (23761 55997 649146 792000) "acknowledgement.clj" "sequence.clj" "stock.clj" "commands_events.clj" "counterparty_broker_graphql.clj" "trade.clj" "command_processor.clj" "customer_graphql.clj" "books_records.clj" "bdops_graphql.clj" "customer.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/generated_src/" (23761 56005 121855 928000) "validations/" "spec/" "enums/" "records/" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/dev/src/datamodel/" (23705 9891 466182 518000) "bundle.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/dev/src/" (23716 41886 851350 96000) "dev.clj" "datamodel/" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/dev/" (23705 9893 487954 467000) "src/" "resources/" "../" "./")
+
+ ("/Users/kgann/.emacs.d/setup/" (23732 42425 424646 43000) "setup-autocomplete.el" "setup-uniquify.el" "setup-required-packages.el" "setup-projectile.el" "setup-cider.el" "osx.el" "appearance.el" "setup-plantuml-helpers.el~" "setup-global-bindings.el" "setup-whitespace.el" "setup-hooks.el" "setup-sr-speedbar.el" "setup-volatile-highlights.el" "setup-path.el" "setup-plantuml-helpers.el" "setup-ido.el" "setup-smartparens.el" "setup-smart-mode-line.el" "core-fns.el" "../" "./")
+
+ ("/Users/kgann/src/parkside/fix-gateway/src/fix_gateway/" (23705 9869 792430 650000) "street_side_order_placed.clj" "core.clj" "fix.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/fix-gateway/src/" (23705 9869 168517 684000) "fix_gateway/" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-client/src/kafka_client/" (23725 9791 960477 747000) "admin_client.clj" "core.clj" "admin.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-client/src/" (23705 9833 467458 910000) "kafka_client/" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-client/" (23724 58963 856004 316000) "wercker.yml" "src/" ".envrc_local" ".git/" ".gitlibs/" ".cpcache/" "dev/" ".github/" ".gitignore" "README.md" ".nrepl-port" "deps.edn" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-streams/src/" (23705 9849 425719 796000) "kafka_streams.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-streams/" (23725 9746 115011 197000) "wercker.yml" "src/" ".envrc_local" ".git/" "dot_envrc_local_template" "dev/" ".github/" ".gitignore" "README.md" "deps.edn" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/kafka-ui/" (23705 9897 134985 691000) ".git/" ".github/" ".gitignore" "README.md" ".nvimrc" "deps.edn" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/datamodel/resources/datomic-schema/" (23761 43770 462759 364000) "customer.edn" "commands-events-datomic.edn" "trade.edn" "command-processor-datomic.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/" (23761 32918 447646 280000) "wercker.yml" "src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".cpcache/" "run-with-fake-id.sh" "dev/" ".github/" ".env" "fake-id/" ".gitignore" "load-schema/" "README.md" "run.sh" ".nrepl-port" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/" (23761 32855 401462 297000) "wercker.yml" "src/" ".envrc_local" "datomic-peer/" ".m2/" ".git/" ".gitlibs/" ".cpcache/" ".github/" ".env" ".gitignore" "img/" "README.md" "run.sh" ".nrepl-port" "resources/" "deps.edn" "Dockerfile" "datomic-cloud/" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/" (23760 32303 53497 65000) "titanium-lobster/" "aws-t7e/" "terraform-iac/" "uml-diagrams/" "datomic-client-peer/" "kafka-ui/" "lenses/" "broker-workstation/" "docker-compose-tools/" "sequence-sdk-java/" "blueprinter/" "datomic-schema-loader/" "kafka-client/" "kafka-avro-confluent/" "counterparty-broker-graphql/" "datamodel/" "coding-test-01/" "dev-blueprint/" "terraform-aws-atlantis/" "security-master/" "flux-get-started/" "aws-ami/" "cognito-cljs/" "maven-s3-private-repo-uploader/" "terraform-modules/" "e2e-test/" "fix-gateway/" "pksdctl/" "coding-test-01_nick-driscoll/" "root/" "abracad/" "pksd/" "sdi-ui/" "docker-datomic-peer-server/" "fake-id/" "docker-clojure-dev/" "kibit-runner/" "kinsky/" "lacinia-resolvers/" "lambda-kube/" "bonsai/" "datomic-connect/" "order-service/" "trade-service/" "parkside-landing-page/" "datomic-client/" "command-producer/" "lamina/" "quote-feeder/" "docker-fiximulator/" "umlaut-artifact-gen/" "permissions/" "docker-datomic-peer-server-private/" "l10n-dictionary/" "pedestal-health/" "fix-translator/" "lein-umlaut/" "bdops-graphql/" "rollbar/" "agreements/" "oidc/" "lein-umlaut-private/" "kafka-streams/" "browser-test/" "k8s-yaml/" "lacinia-schema/" "fiximulator/" "repl-bootstrap/" "parkside-permissions/" "clj-fix/" "quote-provider/" "green-bay/" "docker-datomic-private/" "datomic-client-cloud/" "pedestal/" "mock-graphql/" "dir-watch/" "docker-datomic-console-private/" "customer-graphql/" "s3-client/" "notary-service/" "sdi-advanced-charting/" "github-graphql-client/" "kyc/" "kafka-streams-clojure/" "logger/" "docker-datomic-console/" "validator/" "docker-datomic/" "account-service/" "parkside-cli/" "sdi_mobile/" "command-processor/" "docker-parkside-runtime/" "docker-openvpn/" "kafka-admin/" "k8s-manager/" "umlaut-private/" "id-generator/" "namespacefy/" "umlaut/" "../" "./")
+
+ ("/Users/kgann/src/parkside/docker-datomic-console-private/" (23760 32817 53621 383000) ".git/" ".credentials" ".github/" ".gitignore" "README.md" ".nvimrc" "Dockerfile" "../" "./")
+
+ ("/Users/kgann/src/parkside/docker-datomic-console/" (23760 31782 316741 376000) ".git/" "datomic-version" "README.md" "History.md" "Makefile" "Dockerfile" "bump.sh" "../" "./")
+
+ ("/Users/kgann/src/parkside/docker-datomic/" (23746 8314 519658 702000) ".git/" "datomic-version" "README.md" "History.md" "Makefile" "Dockerfile" "bump.sh" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/src/oidc/pedestal/" (23755 14756 375861 51000) "http.clj" "oidc.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/" (23755 15400 463524 941000) "wercker.yml" "src/" ".git/" ".cpcache/" "dev/" ".github/" ".gitignore" "img/" "README.md" ".nrepl-port" "deps.edn" "test/" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/test/counterparty_broker_graphql/test/" (23705 9833 277972 564000) "pedestal_common.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/resources/" (23760 29855 992935 346000) "localization/" "com/" "config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/customer-graphql/resources/" (23746 6921 838907 20000) "com/" "config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/customer-graphql/src/customer_graphql/" (23705 9848 693735 862000) "config.clj" "resolver/" "pedestal.clj" "core.clj" "pubsub.clj" "boundary/" "streamers/" "../" "./")
+
+ ("/Users/kgann/src/parkside/customer-graphql/src/" (23705 9847 809867 383000) "customer_graphql/" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/resources/" (23760 29619 790072 861000) "com/" "duct_hierarchy.edn" "config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/test/command_processor/" (23760 24036 294865 360000) "processor_test.clj" "handler_test.clj" "config_test.clj" "test/" "test_config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/test/command_processor/test/" (23719 29887 527586 347000) "simple_event_rule.clj" "simple_rule.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/" (23760 22824 505742 753000) "wercker.yml" "src/" ".envrc_local" "wercker/" ".git/" ".gitlibs/" ".cpcache/" "dev/" ".github/" ".gitignore" "README.md" ".nrepl-port" "resources/" "deps.edn" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/logger/src/" (23760 19481 961404 987000) "logger.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/logger/" (23760 19383 655098 323000) "wercker.yml" "src/" ".envrc_local" ".git/" ".cpcache/" "dev/" ".github/" ".gitignore" "README.md" "deps.edn" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/resources/duct/" (23760 21880 163567 246000) "command-processor.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/notary-service/resources/" (23760 20795 931673 157000) "config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/notary-service/src/notary_service/" (23747 4958 330904 737000) "rules/" "core.clj" "util.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/test/oidc/pedestal/" (23755 14700 611218 811000) "oidc_test.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/resources/com/" (23705 9874 824132 240000) "walmartlabs/" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/test/counterparty_broker_graphql/" (23719 37141 300835 907000) "wire_test.clj" "customer.graphql" "deposit_test.clj" "deposit.graphql" "test/" "wire.graphql" "customer_test.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/test/" (23705 9833 260854 621000) "counterparty_broker_graphql/" "../" "./")
+
+ ("/Users/kgann/src/" (23736 43606 766912 654000) "hydrox/" "wm/" "dotfiles/" "parkside/" "git-subrepo/" "namespacefy/" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-processor/src/" (23705 9873 506036 125000) "command_processor/" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/resources/" (23705 9871 390835 838000) "config.edn" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/src/account_service/rules/customer/" (23752 29538 646768 193000) "verify_customer.clj" "submit_application.clj" "post_kyc.clj" "save_application.clj" "approve_customer.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/src/account_service/rules/" (23732 38179 652312 8000) "customer/" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/src/account_service/" (23733 60934 925475 282000) "rules/" "core.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/src/" (23705 9871 20957 336000) "account_service/" "../" "./")
+
+ ("/Users/kgann/src/parkside/account-service/" (23752 35455 334718 205000) "wercker.yml" "src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".cpcache/" "dev/" ".github/" ".env" ".gitignore" "README.md" "run.sh" ".nrepl-port" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/notary-service/src/" (23705 9896 515817 786000) "notary_service/" "../" "./")
+
+ ("/Users/kgann/src/parkside/broker-workstation/" (23753 62745 328079 968000) "wercker.yml" "src/" ".envrc_local" ".m2/" ".git/" ".gitlibs/" ".github/" ".gitignore" "build.sh" ".lein-repl-history" "env/" "README.md" "run.sh" "resources/" "target/" "deps.edn" "Dockerfile" "externs.js" ".envrc" "project.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/test/oidc/" (23705 9831 661632 177000) "boundary/" "pedestal/" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/test/" (23705 9831 612650 460000) "oidc/" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/src/oidc/" (23705 9831 635675 789000) "jwk.clj" "boundary/" "pedestal/" "cognito.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/oidc/src/" (23705 9831 562287 498000) "oidc/" "../" "./")
+
+ ("/Users/kgann/src/parkside/sdi_mobile/" (23753 55967 764236 354000) ".envrc_local" "assets/" ".git/" "build/" ".flutter-plugins" "lib/" ".github/" "android/" ".gitignore" "pubspec.yaml" "README.md" "ios/" "pubspec.lock" ".metadata" "test/" ".DS_Store" "screenshots/" ".envrc" "test_driver/" ".packages" "../" "./")
+
+ ("/Users/kgann/src/parkside/sdi_mobile/lib/" (23753 54718 722069 213000) "pages/" "mains/" "main.dart" "models/" "shared/" "scratchpad/" "app/" "ignored_config.dart" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/src/" (23705 9833 87179 722000) "counterparty_broker_graphql/" "../" "./")
+
+ ("/Users/kgann/src/parkside/counterparty-broker-graphql/src/counterparty_broker_graphql/lacinia/" (23719 37141 298567 527000) "query_customer.clj" "deposit.clj" "receive_wire.clj" "query_payables.clj" "send_wire.clj" "query_receivables.clj" "unimplemented.clj" "customer.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-producer/src/command_producer/lacinia/" (23710 18411 507221 671000) "enum.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-producer/src/command_producer/" (23710 18411 507151 234000) "lacinia/" "core.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/command-producer/src/" (23705 9871 599511 300000) "command_producer/" "../" "./")
+
+ ("/Users/kgann/src/parkside/customer-graphql/" (23752 34393 294837 393000) "wercker.yml" "src/" ".envrc_local" ".m2/" "fake/" ".git/" ".gitlibs/" ".cpcache/" "e2e-test/" "dev/" ".github/" ".env" ".gitignore" "load-schema/" "README.md" "run.sh" "docs/" ".nrepl-port" "template/" "resources/" "deps.edn" "Dockerfile" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/test/" (23752 26558 701776 965000) "bdops_graphql_test.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/bdops-graphql/src/bdops_graphql/lacinia/" (23752 26558 701285 887000) "account.clj" "agreement.clj" "customer.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/src/lacinia_schema/scalars/" (23752 22378 133690 13000) ".#iso_8601.clj" "iso_8601.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/test/lacinia_schema/scalars/" (23752 21806 389565 32000) "iso_8601_test.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/" (23752 21760 66945 997000) "wercker.yml" "src/" ".envrc_local" ".git/" ".cpcache/" "dev/" ".github/" ".gitignore" "README.md" ".nrepl-port" "deps.edn" "test/" ".envrc" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/test/lacinia_schema/" (23705 9847 109098 603000) "scalars/" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/test/" (23705 9847 107099 73000) "lacinia_schema/" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/src/lacinia_schema/" (23705 9847 70468 958000) "scalars/" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-schema/src/" (23705 9847 167973 534000) "lacinia_schema/" "lacinia_schema.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-resolvers/src/lacinia_resolvers/" (23705 9849 900901 285000) "customer/" "pii.clj" "locale.clj" "ownership_type.clj" "../" "./")
+
+ ("/Users/kgann/src/parkside/lacinia-resolvers/src/" (23705 9849 877884 799000) "lacinia_resolvers/" "lacinia_resolvers.clj" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

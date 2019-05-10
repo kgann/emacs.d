@@ -10,7 +10,7 @@
 ;; (setq x-underline-at-descent-line t)
 ;; (load-theme 'solarized-dark t)
 
-;(load-theme 'blackboard t)
+:(load-theme 'blackboard t)
 ;(load-theme 'noctilux t)
 ;(load-theme 'zenburn t)
 (load-theme 'monokai t)
