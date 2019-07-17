@@ -1,10 +1,2 @@
-/auto-save-list
-/backups
-/elpa
-/ac-dict
-/places
-ac-comphist.dat
-.mc-lists.el
-/projectile*
-custom.el
-smex-items
+*
+!init.el
