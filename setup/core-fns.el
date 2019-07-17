@@ -50,8 +50,19 @@
 
 (defun dev-notes ()
   (interactive)
-  (let ((notes (format-time-string "%m-%d-%Y")))
-    (find-file (expand-file-name (concat "~/Documents/dev-notes/" notes ".org")))))
+  (find-file (expand-file-name
+	      (concat "~/Documents/dev-notes/"
+		      (format-time-string "%m-%d-%Y")
+		      ".org"))))
+
+(defun prev-dev-notes ()
+  (interactive)
+  (let* ((day (* 24 3600))
+	 (now (current-time)))
+    (find-file (expand-file-name
+		(concat "~/Documents/dev-notes/"
+			(format-time-string "%m-%d-%Y" (time-subtract now day))
+			".org")))))
 
 (provide 'core-fns)
 ;; core fns

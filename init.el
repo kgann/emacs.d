@@ -24,21 +24,26 @@
                             auto-complete
                             cider
                             clojure-mode
+			    company-lsp
                             ;;cljdoc
+			    dart-mode
                             dash
                             diff-hl
                             diminish
                             discover-my-major
                             expand-region
+			    flutter
                             flx-ido
                             ido-completing-read+
                             ido-vertical-mode
+			    lsp-mode
                             magit
                             multiple-cursors
                             monokai-theme
                             pixie-mode
                             perspective
                             projectile
+			    pos-tip
                             rainbow-delimiters
                             restclient
                             smartparens
@@ -46,7 +51,9 @@
                             smex
                             solarized-theme
                             undo-tree
-                            volatile-highlights))
+			    use-package
+                            volatile-highlights
+			    yasnippet))
 
 (require 'setup-required-packages)
 
@@ -154,3 +161,47 @@
 (setq gc-cons-threshold 20000000)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+;; flutter
+(defun open-ios-simulator ()
+  (interactive)
+  (shell-command "flutter emulators --launch apple_ios_simulator") )
+
+(defun flutter-mode-after-save-hook ()
+  (when (eq major-mode 'dart-mode)
+    (flutter-hot-reload)))
+
+(add-hook 'after-save-hook #'flutter-mode-after-save-hook)
+
+(use-package pos-tip
+  :commands pos-tip)
+
+(use-package company-lsp
+  :commands company-lsp)
+
+(use-package lsp-mode
+  :commands lsp)
+
+(use-package dart-mode
+  :hook (dart-mode . lsp)
+  :after lsp
+  :custom
+  (dart-format-on-save t)
+  (dart-sdk-path "/usr/local/flutter/bin/cache/dart-sdk/"))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload))
+  :commands open-ios-simulator
+  :custom
+  (flutter-sdk-path "/usr/local/flutter/"))
+
+(setq dart-format-on-save t)
+
+(require 'company-dart)
+(require 'company-yankpad)
+
+(add-hook 'dart-mode-hook (lambda ()
+ (set (make-local-variable 'company-backends)
+  '(company-dart (company-dabbrev company-yankpad)))))
