@@ -267,16 +267,25 @@
   (interactive)
   (shell-command "flutter emulators --launch apple_ios_simulator"))
 
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
 (use-package pos-tip
+  :ensure t
   :commands pos-tip)
 
 (use-package company-lsp
+  :ensure t
   :commands company-lsp)
 
 (use-package lsp-mode
+  :ensure t
   :commands lsp)
 
 (use-package dart-mode
+  :ensure t
   :hook (dart-mode . lsp)
   :after lsp
   :custom
@@ -284,6 +293,7 @@
   (dart-sdk-path "/usr/local/flutter/bin/cache/dart-sdk/"))
 
 (use-package flutter
+  :ensure t
   :after dart-mode
   :bind (:map dart-mode-map
               ("C-M-x" . #'flutter-run-or-hot-reload))
