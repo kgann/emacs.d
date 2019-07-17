@@ -183,6 +183,8 @@
   (setq persp-initial-frame-name "m")
   :config
   (projectile-global-mode)
+  (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
+  (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
   (global-set-key (kbd "s-f") 'projectile-find-file)
   (diminish 'projectile-mode))
 
