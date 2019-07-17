@@ -274,24 +274,25 @@
   :config
   (yas-global-mode 1))
 
-(use-package pos-tip
-  :ensure t
-  :commands pos-tip)
+;; (use-package pos-tip
+;;   :ensure t
+;;   :commands pos-tip)
 
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp)
+;; (use-package company-lsp
+;;   :ensure t
+;;   :commands company-lsp)
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp)
+  :commands lsp
+  :init
+  (setq lsp-auto-guess-root t))
 
 (use-package dart-mode
   :ensure t
   :hook (dart-mode . lsp)
   :after lsp
   :custom
-  (dart-format-on-save t)
   (dart-sdk-path "/usr/local/flutter/bin/cache/dart-sdk/"))
 
 (use-package flutter
@@ -301,8 +302,17 @@
               ("C-M-x" . #'flutter-run-or-hot-reload))
   :commands open-ios-simulator
   :hook (after-save . flutter-hot-reload)
+  :config
+  (defun flutter-project-get-root ()
+    "Find the root of the current project."
+    (projectile-project-root))
   :custom
   (flutter-sdk-path "/usr/local/flutter/"))
+
+(add-hook 'before-save-hook
+	  (lambda ()
+	    (when (eq major-mode 'dart-mode)
+	      (dart-format))))
 
 ;; (require 'company-dart)
 ;; (require 'company-yankpad)
@@ -310,3 +320,13 @@
 ;; (add-hook 'dart-mode-hook (lambda ()
 ;;  (set (make-local-variable 'company-backends)
 ;;   '(company-dart (company-dabbrev company-yankpad)))))
+
+(defun project-try-dart (dir)
+  (let ((project (or (locate-dominating-file dir "pubspec.yaml")
+                     (locate-dominating-file dir "BUILD"))))
+    (if project
+        (cons 'dart project)
+      (cons 'transient dir))))
+(add-hook 'project-find-functions #'project-try-dart)
+(cl-defmethod project-roots ((project (head dart)))
+  (list (cdr project)))
