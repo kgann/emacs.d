@@ -1,2 +1,4 @@
 *
 !init.el
+!company*.el
+!vendor
