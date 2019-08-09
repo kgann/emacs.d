@@ -40,15 +40,6 @@
 (if (file-exists-p custom-file)
   (load custom-file))
 
-(use-package fns :load-path ".")
-
-;; Bindings
-(global-set-key (kbd "C-c d") 'custom-duplicate-line)
-(global-set-key (kbd "C-c n") 'dev-notes)
-(global-set-key (kbd "C-a") 'custom-move-beginning-of-line)
-(global-set-key (kbd "C-c r") 'revert-buffer)
-(global-set-key (kbd "C-c R") 'revert-all-buffers)
-
 ;; Functionality
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
@@ -72,6 +63,16 @@
 
 ;; Hooks
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(use-package fns
+  :load-path "."
+  :config
+  ;; Bindings
+  (global-set-key (kbd "C-c d") 'custom-duplicate-line)
+  (global-set-key (kbd "C-c n") 'dev-notes)
+  (global-set-key (kbd "C-a") 'custom-move-beginning-of-line)
+  (global-set-key (kbd "C-c r") 'revert-buffer)
+  (global-set-key (kbd "C-c R") 'revert-all-buffers))
 
 (use-package monokai-theme
   :ensure t
