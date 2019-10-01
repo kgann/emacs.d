@@ -94,6 +94,9 @@
   (show-smartparens-global-mode t)
   (set-face-background 'sp-show-pair-match-face "#272822"))
 
+(use-package flycheck :ensure t)
+(use-package flycheck-joker :ensure t)
+
 (use-package ido-completing-read+ :ensure t)
 (use-package flx-ido :ensure t)
 (use-package ido-vertical-mode :ensure t)
@@ -186,7 +189,8 @@
 (use-package clojure-mode
   :ensure t
   :hook ((clojure-mode . rainbow-delimiters-mode)
-	 (clojure-mode . turn-on-eldoc-mode)))
+	 (clojure-mode . turn-on-eldoc-mode)
+	 (clojure-mode . flycheck-mode)))
 
 (use-package magit
   :ensure t
