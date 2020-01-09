@@ -192,6 +192,9 @@
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)))
 
+(use-package yaml-mode
+  :ensure t)
+
 (use-package magit
   :ensure t
   :config
@@ -283,3 +286,5 @@
 	    (lambda ()
 	      (set (make-local-variable 'company-backends)
 		   '(company-dart (company-dabbrev company-yankpad))))))
+
+(put 'erase-buffer 'disabled nil)
