@@ -147,9 +147,18 @@
   (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
   (global-set-key (kbd "s-f") 'projectile-find-file))
 
+(use-package direnv
+  :ensure t
+  :config
+  (add-to-list 'direnv-non-file-modes 'cider-repl-mode))
+
 (use-package cider
   :ensure t
   :init
+  (advice-add 'cider-jack-in-clj
+	      :before (lambda (&rest args)
+			(direnv-update-directory-environment)))
+  (setq cider-clojure-cli-global-options "-A:dev -C:fake-id")
   (setq nrepl-hide-special-buffers t)
   (setq cider-repl-pop-to-buffer-on-connect t)
   (setq cider-repl-wrap-history t)
