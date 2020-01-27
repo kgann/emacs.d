@@ -197,6 +197,8 @@
 
 (use-package clojure-mode
   :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.joke\\'" . clojure-mode))
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)))
