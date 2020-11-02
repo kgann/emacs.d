@@ -147,6 +147,9 @@
   (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
   (global-set-key (kbd "s-f") 'projectile-find-file))
 
+(use-package sudo-edit
+  :ensure t)
+
 (use-package direnv
   :ensure t
   :config
@@ -158,7 +161,7 @@
   (advice-add 'cider-jack-in-clj
 	      :before (lambda (&rest args)
 			(direnv-update-directory-environment)))
-  (setq cider-clojure-cli-global-options "-A:dev -C:fake-id")
+  (setq cider-clojure-cli-global-options "-A:dev-defaults:dev -C:fake-id -J-Xmx4000m")
   (setq nrepl-hide-special-buffers t)
   (setq cider-repl-pop-to-buffer-on-connect t)
   (setq cider-repl-wrap-history t)
@@ -191,6 +194,15 @@
   (smex-initialize)
   :init
   (global-set-key (kbd "M-x") 'smex))
+
+(use-package makefile-executor
+  :ensure t
+  :init
+  (advice-add 'makefile-executor-execute-target
+	      :before (lambda (&rest args)
+			(direnv-update-directory-environment)))
+  :config
+  (add-hook 'makefile-mode-hook 'makefile-executor-mode))
 
 (use-package rainbow-delimiters
   :ensure t)
@@ -270,6 +282,9 @@
   :diminish yasnippet
   :config
   (yas-global-mode 1))
+
+(use-package clojure-snippets
+  :ensure t)
 
 (use-package pos-tip
   :ensure t
