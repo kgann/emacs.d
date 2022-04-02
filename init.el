@@ -21,7 +21,7 @@
 (setq help-window-select t)
 (setq inhibit-startup-message t)
 (setq insert-directory-program "gls")
-(setq linum-format " %d ")
+;; (setq linum-format " %d ")
 (setq load-prefer-newer t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
@@ -63,6 +63,10 @@
 
 ;; Hooks
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(use-package neotree
+  :config
+  (global-set-key (kbd "C-x t t") 'neotree-toggle))
 
 (use-package fns
   :load-path "."
@@ -195,14 +199,14 @@
   :init
   (global-set-key (kbd "M-x") 'smex))
 
-(use-package makefile-executor
-  :ensure t
-  :init
-  (advice-add 'makefile-executor-execute-target
-	      :before (lambda (&rest args)
-			(direnv-update-directory-environment)))
-  :config
-  (add-hook 'makefile-mode-hook 'makefile-executor-mode))
+;; (use-package makefile-executor
+;;   :ensure t
+;;   :init
+;;   (advice-add 'makefile-executor-execute-target
+;; 	      :before (lambda (&rest args)
+;; 			(direnv-update-directory-environment)))
+;;   :config
+;;   (add-hook 'makefile-mode-hook 'makefile-executor-mode))
 
 (use-package rainbow-delimiters
   :ensure t)
