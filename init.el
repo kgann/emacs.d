@@ -68,8 +68,8 @@
   :config
   (global-set-key (kbd "C-x t t") 'neotree-toggle))
 
-(use-package fns
-  :load-path "."
+(use-package core-fns
+  :load-path "./lisp"
   :config
   ;; Bindings
   (global-set-key (kbd "C-c d") 'custom-duplicate-line)
