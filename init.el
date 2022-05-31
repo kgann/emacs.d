@@ -92,7 +92,7 @@
 	 (lisp-mode . smartparens-mode)
 	 (eval-expression-minibuffer-setup . smartparens-mode))
   :config
-  (sp-use-paredit-bindings)
+  ;; (sp-use-paredit-bindings)
   (sp-use-smartparens-bindings)
   (smartparens-global-mode t)
   (show-smartparens-global-mode t)
@@ -100,6 +100,7 @@
 
 (use-package flycheck :ensure t)
 (use-package flycheck-joker :ensure t)
+(use-package flycheck-clj-kondo :ensure t)
 
 (use-package ido-completing-read+ :ensure t)
 (use-package flx-ido :ensure t)
@@ -156,21 +157,26 @@
 
 (use-package direnv
   :ensure t
-  :config
-  (add-to-list 'direnv-non-file-modes 'cider-repl-mode))
+  ;;:config
+  ;;(add-to-list 'direnv-non-file-modes 'cider-repl-mode)
+  )
 
 (use-package cider
   :ensure t
   :init
-  (advice-add 'cider-jack-in-clj
-	      :before (lambda (&rest args)
-			(direnv-update-directory-environment)))
-  (setq cider-clojure-cli-global-options "-A:dev-defaults:dev -C:fake-id -J-Xmx4000m")
+  (add-hook 'cider-repl-mode-hook #'company-mode)
+  (add-hook 'cider-mode-hook #'company-mode)
+;; (advice-add 'cider-jack-in-clj
+  ;; 	      :before (lambda (&rest args)
+  ;; 			(direnv-update-directory-environment)))
+  ;; (setq cider-clojure-cli-global-options "-A:dev-defaults:dev -C:fake-id -J-Xmx4000m")
   (setq nrepl-hide-special-buffers t)
-  (setq cider-repl-pop-to-buffer-on-connect t)
+  (setq cider-repl-pop-to-buffer-on-connect 'display-only)
+  (setq cider-repl-display-in-current-window t)
   (setq cider-repl-wrap-history t)
   (setq cider-prompt-save-file-on-load nil)
-  (setq cider-repl-use-clojure-font-lock t))
+  (setq cider-repl-use-clojure-font-lock t)
+  (setq cider-overlays-use-font-lock t))
 
 (use-package volatile-highlights
   :ensure t
@@ -192,12 +198,12 @@
   (setq sml/theme 'respectful)
   (sml/setup))
 
-(use-package smex
+(use-package amx
   :ensure t
   :config
-  (smex-initialize)
+  (amex-initialize)
   :init
-  (global-set-key (kbd "M-x") 'smex))
+  (global-set-key (kbd "M-x") 'amx))
 
 ;; (use-package makefile-executor
 ;;   :ensure t
@@ -215,6 +221,9 @@
   :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.joke\\'" . clojure-mode))
+  :config
+  (require 'flycheck-clj-kondo)
+  (require 'smartparens-clojure)
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)))
@@ -241,7 +250,8 @@
   :ensure t
   :diminish undo-tree-mode
   :config
-  (global-undo-tree-mode))
+  (global-undo-tree-mode)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))))
 
 (use-package ace-window
   :ensure t
@@ -297,24 +307,24 @@
 (use-package company
   :ensure t)
 
-(use-package company-lsp
-  :ensure t
-  :init
-  (setq company-lsp-cache-candidates t)
-  (setq company-lsp-filter-candidates t)
-  :commands company-lsp
-  :bind ("C-<return>" . company-lsp))
+;; (use-package company-lsp
+;;   :ensure t
+;;   :init
+;;   (setq company-lsp-cache-candidates t)
+;;   (setq company-lsp-filter-candidates t)
+;;   :commands company-lsp
+;;   :bind ("C-<return>" . company-lsp))
 
-(use-package company-yankpad
-  :load-path "./vendor")
+;; (use-package company-yankpad
+;;   :load-path "./vendor")
 
-(use-package company-dart
-  :load-path "./vendor"
-  :after (dart-mode company-yankpad)
-  :config
-  (add-hook 'dart-mode-hook
-	    (lambda ()
-	      (set (make-local-variable 'company-backends)
-		   '(company-dart (company-dabbrev company-yankpad))))))
+;; (use-package company-dart
+;;   :load-path "./vendor"
+;;   :after (dart-mode company-yankpad)
+;;   :config
+;;   (add-hook 'dart-mode-hook
+;; 	    (lambda ()
+;; 	      (set (make-local-variable 'company-backends)
+;; 		   '(company-dart (company-dabbrev company-yankpad))))))
 
 (put 'erase-buffer 'disabled nil)
