@@ -8,7 +8,10 @@
   (package-refresh-contents))
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+(unless (package-installed-p 'diminish)
+  (package-install 'diminish))
 (require 'use-package)
+(require 'diminish)
 
 (setq auto-save-default nil)
 (setq backup-by-copying t)
@@ -92,14 +95,16 @@
 	 (lisp-mode . smartparens-mode)
 	 (eval-expression-minibuffer-setup . smartparens-mode))
   :config
-  ;; (sp-use-paredit-bindings)
+  (require 'smartparens-config)
+  ;;(sp-use-paredit-bindings)
   (sp-use-smartparens-bindings)
   (smartparens-global-mode t)
   (show-smartparens-global-mode t)
-  (set-face-background 'sp-show-pair-match-face "#272822"))
+  ;;(set-face-background 'sp-show-pair-match-face "#272822")
+  )
 
 (use-package flycheck :ensure t)
-(use-package flycheck-joker :ensure t)
+;; (use-package flycheck-joker :ensure t)
 (use-package flycheck-clj-kondo :ensure t)
 
 (use-package ido-completing-read+ :ensure t)
@@ -146,6 +151,7 @@
   (setq projectile-enable-caching t)
   (setq projectile-mode-line-lighter "P")
   (setq persp-initial-frame-name "m")
+  (setq ns-right-command-modifier 'super)
   :config
   (projectile-global-mode)
   (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
@@ -160,6 +166,9 @@
   ;;:config
   ;;(add-to-list 'direnv-non-file-modes 'cider-repl-mode)
   )
+
+(use-package browse-at-remote
+  :ensure t)
 
 (use-package cider
   :ensure t
@@ -178,11 +187,11 @@
   (setq cider-repl-use-clojure-font-lock t)
   (setq cider-overlays-use-font-lock t))
 
-(use-package volatile-highlights
-  :ensure t
-  :diminish volatile-highlights-mode
-  :config
-  (volatile-highlights-mode t))
+;; (use-package volatile-highlights
+;;   :ensure t
+;;   :diminish volatile-highlights-mode
+;;   :config
+;;   (volatile-highlights-mode t))
 
 (use-package auto-complete
   :ensure t
@@ -201,7 +210,7 @@
 (use-package amx
   :ensure t
   :config
-  (amex-initialize)
+  (amx-initialize)
   :init
   (global-set-key (kbd "M-x") 'amx))
 
