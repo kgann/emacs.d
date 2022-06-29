@@ -233,9 +233,12 @@
   :config
   (require 'flycheck-clj-kondo)
   (require 'smartparens-clojure)
+
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
-	 (clojure-mode . flycheck-mode)))
+	 (clojure-mode . flycheck-mode)
+	 ;(clojure-mode . lsp)
+	 ))
 
 (use-package yaml-mode
   :ensure t)
@@ -269,6 +272,7 @@
   :config
   (global-set-key [remap other-window] 'ace-window))
 
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/
 (use-package lsp-mode
   :ensure t
   :commands lsp
