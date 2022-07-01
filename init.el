@@ -78,7 +78,8 @@
   (global-set-key (kbd "C-c n") 'dev-notes)
   (global-set-key (kbd "C-a")   'custom-move-beginning-of-line)
   (global-set-key (kbd "C-c r") 'revert-buffer)
-  (global-set-key (kbd "C-c R") 'revert-all-buffers))
+  (global-set-key (kbd "C-c R") 'revert-all-buffers)
+  (global-set-key (kbd "C-x M-d") 'lsp-ui-doc-show-at-point))
 
 (use-package kaolin-themes
   :ensure t
@@ -86,20 +87,21 @@
   (load-theme 'kaolin-galaxy t))
 
 (use-package iimage :ensure t)
-(use-package flycheck :ensure t)
+(use-package flycheck :ensure t :diminish flycheck-mode)
 (use-package flycheck-joker :ensure t)
 (use-package flycheck-clj-kondo :ensure t)
 (use-package sudo-edit :ensure t)
 (use-package direnv :ensure t)
 (use-package browse-at-remote :ensure t)
 (use-package restclient :ensure t)
-(use-package company :ensure t)
+(use-package company :ensure t :diminish company-mode)
 (use-package rainbow-delimiters :ensure t)
 (use-package yaml-mode :ensure t)
 (use-package treemacs-projectile :ensure t)
 
 (use-package smartparens
   :ensure t
+  :diminish smartparens-mode
   :hook ((clojure-mode . smartparens-mode)
 	 (emacs-lisp-mode . smartparens-mode)
 	 (lisp-mode . smartparens-mode)
@@ -218,6 +220,7 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
+  :diminish lsp-lens-mode
   :init
   (setq lsp-auto-guess-root t
 	company-minimum-prefix-length 1
@@ -230,7 +233,9 @@
   :ensure t
   :commands lsp-ui-mode
   :config
-  (setq lsp-ui-doc-delay 0.75)
+  (setq lsp-ui-doc-delay 0.75
+	lsp-ui-doc-show-with-cursor nil
+	lsp-ui-doc-show-with-mouse nil)
   (define-key lsp-ui-mode-map [remap xref-find-definitions] 'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] 'lsp-ui-peek-find-references))
 
@@ -251,4 +256,8 @@
 
 (use-package yasnippet
   :ensure t
+  :diminish yas-minor-mode
   :hook ((lsp-mode . yas-minor-mode)))
+
+(diminish 'auto-revert-mode)
+(diminish 'eldoc-mode)

@@ -53,5 +53,12 @@
   (let ((notes (format-time-string "%m-%d-%Y")))
     (find-file (expand-file-name (concat "~/Documents/dev-notes/" notes ".org")))))
 
+(defun lsp-ui-doc-show-at-point (arg)
+  (interactive "P")
+  (progn
+    (setq lsp-ui-doc-delay 0.1)
+    (setq lsp-ui-doc-position 'at-point)
+    (lsp-ui-doc-show)))
+
 (provide 'core-fns)
 ;; core fns
