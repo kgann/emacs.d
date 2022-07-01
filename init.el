@@ -10,42 +10,43 @@
   (package-install 'use-package))
 (unless (package-installed-p 'diminish)
   (package-install 'diminish))
-(require 'use-package)
-(require 'diminish)
 
-(setq auto-save-default nil)
-(setq backup-by-copying t)
-(setq backup-directory-alist `(("." . "~/.saves")))
-(setq default-cursor-type 'bar)
-(setq delete-by-moving-to-trash t)
-(setq dired-use-ls-dired t)
-(setq find-program "gfind")
-(setq gc-cons-threshold 50000000)
-(setq help-window-select t)
-(setq inhibit-startup-message t)
-(setq insert-directory-program "gls")
-;; (setq linum-format " %d ")
-(setq load-prefer-newer t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-(setq org-blank-before-new-entry nil)
-(setq require-final-newline t)
-(setq ring-bell-function 'ignore)
-(setq trash-directory "~/.Trash/emacs")
-(setq use-package-verbose t)
-(setq visible-bell t)
+(setq auto-save-default nil
+      backup-by-copying t
+      backup-directory-alist `(("." . "~/.saves"))
+      custom-file (concat user-emacs-directory "custom.el")
+      default-cursor-type 'bar
+      delete-by-moving-to-trash t
+      dired-use-ls-dired t
+      find-program "gfind"
+      gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      help-window-select t
+      inhibit-startup-message t
+      insert-directory-program "gls"
+      load-prefer-newer t
+      mac-command-modifier 'meta
+      mac-option-modifier 'super
+      mouse-wheel-scroll-amount '(1 ((shift) . 1))
+      ns-right-command-modifier 'super
+      org-blank-before-new-entry nil
+      require-final-newline t
+      ring-bell-function 'ignore
+      trash-directory "~/.Trash/emacs"
+      use-package-verbose t
+      visible-bell t)
+
 (setq-default column-number-mode t)
 (setq-default indicate-empty-lines t)
 (setq-default truncate-lines t)
 
-(setq custom-file (concat user-emacs-directory "custom.el"))
 (if (file-exists-p custom-file)
-  (load custom-file))
+    (load custom-file))
 
 ;; Functionality
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
 (delete-selection-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-hl-line-mode 1)
@@ -60,16 +61,14 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 200))
-(set-cursor-color "#ffffff")
 (set-face-attribute 'default nil :family "Monaco" :height 140)
-(set-face-attribute 'region nil :background "#67930F" :foreground "#C1F161")
+(set-face-attribute 'region nil :background "#67930F" :foreground "#FFFFFF")
 
 ;; Hooks
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(use-package neotree
-  :config
-  (global-set-key (kbd "C-x t t") 'neotree-toggle))
+(require 'use-package)
+(require 'diminish)
 
 (use-package core-fns
   :load-path "./lisp"
@@ -77,17 +76,28 @@
   ;; Bindings
   (global-set-key (kbd "C-c d") 'custom-duplicate-line)
   (global-set-key (kbd "C-c n") 'dev-notes)
-  (global-set-key (kbd "C-a") 'custom-move-beginning-of-line)
+  (global-set-key (kbd "C-a")   'custom-move-beginning-of-line)
   (global-set-key (kbd "C-c r") 'revert-buffer)
   (global-set-key (kbd "C-c R") 'revert-all-buffers))
 
-(use-package monokai-theme
+(use-package kaolin-themes
   :ensure t
   :config
-  (load-theme 'monokai t))
+  (load-theme 'kaolin-galaxy t))
 
 (use-package iimage :ensure t)
+(use-package flycheck :ensure t)
+(use-package flycheck-joker :ensure t)
+(use-package flycheck-clj-kondo :ensure t)
+(use-package sudo-edit :ensure t)
+(use-package direnv :ensure t)
+(use-package browse-at-remote :ensure t)
 (use-package restclient :ensure t)
+(use-package company :ensure t)
+(use-package rainbow-delimiters :ensure t)
+(use-package yaml-mode :ensure t)
+(use-package treemacs-projectile :ensure t)
+
 (use-package smartparens
   :ensure t
   :hook ((clojure-mode . smartparens-mode)
@@ -96,16 +106,14 @@
 	 (eval-expression-minibuffer-setup . smartparens-mode))
   :config
   (require 'smartparens-config)
-  ;;(sp-use-paredit-bindings)
   (sp-use-smartparens-bindings)
   (smartparens-global-mode t)
-  (show-smartparens-global-mode t)
-  ;;(set-face-background 'sp-show-pair-match-face "#272822")
-  )
+  (show-smartparens-global-mode t))
 
-(use-package flycheck :ensure t)
-;; (use-package flycheck-joker :ensure t)
-(use-package flycheck-clj-kondo :ensure t)
+(use-package swiper
+  :ensure t
+  :config
+  (global-set-key (kbd "C-s") 'swiper))
 
 (use-package ido-completing-read+ :ensure t)
 (use-package flx-ido :ensure t)
@@ -113,14 +121,14 @@
 (use-package ido
   :ensure t
   :init
-  (setq ido-enable-prefix nil)
-  (setq ido-enable-flex-matching t)
-  (setq ido-max-prospects 10)
-  (setq ido-auto-merge-work-directories-length -1)
-  (setq ido-use-faces nil)
-  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
-  (setq org-completion-use-ido t)
-  (setq magit-completing-read-function 'magit-ido-completing-read)
+  (setq ido-enable-prefix nil
+	ido-enable-flex-matching t
+	ido-max-prospects 10
+	ido-auto-merge-work-directories-length -1
+	ido-use-faces nil
+	ido-vertical-define-keys 'C-n-C-p-up-down-left-right
+	org-completion-use-ido t
+	magit-completing-read-function 'magit-ido-completing-read)
   :config
   (ido-mode 1)
   (ido-ubiquitous-mode 1)
@@ -129,84 +137,6 @@
   (flx-ido-mode +1)
   (add-to-list 'ido-ignore-files "\\.DS_Store"))
 
-(use-package uniquify
-  :init
-  (setq uniquify-buffer-name-style 'forward)
-  (setq uniquify-separator "/")
-  (setq uniquify-after-kill-buffer-p t)
-  (setq uniquify-ignore-buffers-re "^\\*"))
-
-(use-package whitespace
-  :diminish whitespace-mode
-  :init
-  (setq whitespace-line-column 100) ;; limit line length
-  (setq whitespace-style '(face tabs trailing lines-tail))
-  :config
-  (set-face-attribute 'whitespace-line nil :underline "#C73A82"))
-
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :init
-  (setq projectile-enable-caching t)
-  (setq projectile-mode-line-lighter "P")
-  (setq persp-initial-frame-name "m")
-  (setq ns-right-command-modifier 'super)
-  :config
-  (projectile-global-mode)
-  (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
-  (add-to-list 'projectile-project-root-files-bottom-up "BUILD")
-  (global-set-key (kbd "s-f") 'projectile-find-file))
-
-(use-package sudo-edit
-  :ensure t)
-
-(use-package direnv
-  :ensure t
-  ;;:config
-  ;;(add-to-list 'direnv-non-file-modes 'cider-repl-mode)
-  )
-
-(use-package browse-at-remote
-  :ensure t)
-
-(use-package cider
-  :ensure t
-  :init
-  (add-hook 'cider-repl-mode-hook #'company-mode)
-  (add-hook 'cider-mode-hook #'company-mode)
-;; (advice-add 'cider-jack-in-clj
-  ;; 	      :before (lambda (&rest args)
-  ;; 			(direnv-update-directory-environment)))
-  ;; (setq cider-clojure-cli-global-options "-A:dev-defaults:dev -C:fake-id -J-Xmx4000m")
-  (setq nrepl-hide-special-buffers t)
-  (setq cider-repl-pop-to-buffer-on-connect 'display-only)
-  (setq cider-repl-display-in-current-window t)
-  (setq cider-repl-wrap-history t)
-  (setq cider-prompt-save-file-on-load nil)
-  (setq cider-repl-use-clojure-font-lock t)
-  (setq cider-overlays-use-font-lock t))
-
-;; (use-package volatile-highlights
-;;   :ensure t
-;;   :diminish volatile-highlights-mode
-;;   :config
-;;   (volatile-highlights-mode t))
-
-(use-package auto-complete
-  :ensure t
-  :config
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-  (ac-config-default)
-  :init
-  (setq ac-ignore-case nil))
-
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (setq sml/theme 'respectful)
-  (sml/setup))
-
 (use-package amx
   :ensure t
   :config
@@ -214,34 +144,54 @@
   :init
   (global-set-key (kbd "M-x") 'amx))
 
-;; (use-package makefile-executor
-;;   :ensure t
-;;   :init
-;;   (advice-add 'makefile-executor-execute-target
-;; 	      :before (lambda (&rest args)
-;; 			(direnv-update-directory-environment)))
-;;   :config
-;;   (add-hook 'makefile-mode-hook 'makefile-executor-mode))
+(use-package uniquify
+  :init
+  (setq uniquify-buffer-name-style 'forward
+	uniquify-separator "/"
+	uniquify-after-kill-buffer-p t
+	uniquify-ignore-buffers-re "^\\*"))
 
-(use-package rainbow-delimiters
-  :ensure t)
+(use-package projectile
+  :ensure t
+  :diminish projectile-mode
+  :init
+  (setq projectile-enable-caching t
+	projectile-mode-line-lighter "P"
+	persp-initial-frame-name "m")
+  :config
+  (projectile-global-mode)
+  (global-set-key (kbd "s-f") 'projectile-find-file))
+
+(use-package cider
+  :ensure t
+  :init
+  (setq nrepl-hide-special-buffers t
+        cider-repl-pop-to-buffer-on-connect 'display-only
+        cider-repl-wrap-history t
+        cider-prompt-save-file-on-load nil
+        cider-repl-use-clojure-font-lock t
+        cider-overlays-use-font-lock t))
+
+(use-package smart-mode-line
+  :ensure t
+  :config
+  (setq sml/theme 'respectful)
+  (sml/setup))
+
+(use-package highlight-numbers
+  :diminish highlight-numbers-mode
+  :ensure t
+  :hook ((prog-mode . highlight-numbers-mode)))
 
 (use-package clojure-mode
   :ensure t
   :init
-  (add-to-list 'auto-mode-alist '("\\.joke\\'" . clojure-mode))
-  :config
-  (require 'flycheck-clj-kondo)
   (require 'smartparens-clojure)
-
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)
-	 ;(clojure-mode . lsp)
-	 ))
-
-(use-package yaml-mode
-  :ensure t)
+	 (clojure-mode . lsp)
+	 (clojure-mode . cider-mode)))
 
 (use-package magit
   :ensure t
@@ -265,79 +215,40 @@
   (global-undo-tree-mode)
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))))
 
-(use-package ace-window
-  :ensure t
-  :init
-  (setq aw-scope 'frame)
-  :config
-  (global-set-key [remap other-window] 'ace-window))
-
-;; https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/
 (use-package lsp-mode
   :ensure t
   :commands lsp
   :init
-  (setq lsp-auto-guess-root t))
+  (setq lsp-auto-guess-root t
+	company-minimum-prefix-length 1
+	lsp-lens-enable t
+	lsp-signature-auto-activate nil
+	lsp-headerline-breadcrumb-enable nil
+	treemacs-space-between-root-nodes nil))
 
-(use-package dart-mode
+(use-package lsp-ui
   :ensure t
-  :hook (dart-mode . lsp)
+  :commands lsp-ui-mode
   :config
-  (add-hook 'before-save-hook
-	    (lambda ()
-	      (when (eq major-mode 'dart-mode)
-		(dart-format))))
-  :custom
-  (dart-sdk-path "/usr/local/flutter/bin/cache/dart-sdk/"))
+  (setq lsp-ui-doc-delay 0.75)
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] 'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] 'lsp-ui-peek-find-references))
 
-(use-package flutter
+(use-package treemacs
   :ensure t
-  :after dart-mode
-  :bind (:map dart-mode-map
-              ("C-M-x" . #'flutter-run-or-hot-reload))
-  :commands open-ios-simulator
-  :hook (after-save . flutter-hot-reload)
-  :init
-  (with-eval-after-load 'flutter
-    (defun flutter-project-get-root ()
-      (projectile-project-root)))
-  :custom
-  (flutter-sdk-path "/usr/local/flutter/"))
+  :commands lsp-treemacs-errors-list
+  :config
+  (global-set-key (kbd "C-x t t") 'treemacs))
+
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
+
+(use-package lsp-treemacs
+  :ensure t
+  :config
+  (lsp-treemacs-sync-mode 1))
 
 (use-package yasnippet
   :ensure t
-  :diminish yasnippet
-  :config
-  (yas-global-mode 1))
-
-(use-package clojure-snippets
-  :ensure t)
-
-(use-package pos-tip
-  :ensure t
-  :commands pos-tip)
-
-(use-package company
-  :ensure t)
-
-;; (use-package company-lsp
-;;   :ensure t
-;;   :init
-;;   (setq company-lsp-cache-candidates t)
-;;   (setq company-lsp-filter-candidates t)
-;;   :commands company-lsp
-;;   :bind ("C-<return>" . company-lsp))
-
-;; (use-package company-yankpad
-;;   :load-path "./vendor")
-
-;; (use-package company-dart
-;;   :load-path "./vendor"
-;;   :after (dart-mode company-yankpad)
-;;   :config
-;;   (add-hook 'dart-mode-hook
-;; 	    (lambda ()
-;; 	      (set (make-local-variable 'company-backends)
-;; 		   '(company-dart (company-dabbrev company-yankpad))))))
-
-(put 'erase-buffer 'disabled nil)
+  :hook ((lsp-mode . yas-minor-mode)))
