@@ -50,7 +50,7 @@
 (delete-selection-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-hl-line-mode 1)
-(global-linum-mode 1)
+(global-display-line-numbers-mode 1)
 (show-paren-mode 1)
 (windmove-default-keybindings)
 (winner-mode 1)
@@ -61,11 +61,11 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 200))
-(set-face-attribute 'default nil :family "Monaco" :height 140)
+(set-face-attribute 'default nil :family "Monaco" :height 150)
 (set-face-attribute 'region nil :background "#67930F" :foreground "#FFFFFF")
 
 ;; Hooks
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (require 'use-package)
 (require 'diminish)
@@ -97,7 +97,7 @@
 (use-package company :ensure t :diminish company-mode)
 (use-package rainbow-delimiters :ensure t)
 (use-package yaml-mode :ensure t)
-(use-package treemacs-projectile :ensure t)
+;; (use-package treemacs-projectile :ensure t)
 
 (use-package smartparens
   :ensure t
@@ -129,8 +129,7 @@
 	ido-auto-merge-work-directories-length -1
 	ido-use-faces nil
 	ido-vertical-define-keys 'C-n-C-p-up-down-left-right
-	org-completion-use-ido t
-	magit-completing-read-function 'magit-ido-completing-read)
+	org-completion-use-ido t)
   :config
   (ido-mode 1)
   (ido-ubiquitous-mode 1)
@@ -153,26 +152,37 @@
 	uniquify-after-kill-buffer-p t
 	uniquify-ignore-buffers-re "^\\*"))
 
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :init
-  (setq projectile-enable-caching t
-	projectile-mode-line-lighter "P"
-	persp-initial-frame-name "m")
-  :config
-  (projectile-global-mode)
-  (global-set-key (kbd "s-f") 'projectile-find-file))
+;; (use-package projectile
+;;   :ensure t
+;;   :diminish projectile-mode
+;;   :init
+;;   (setq projectile-enable-caching t
+;; 	projectile-mode-line-lighter "P"
+;; 	persp-initial-frame-name "m")
+;;   :config
+;;   (projectile-global-mode)
+;;   (global-set-key (kbd "s-f") 'projectile-find-file))
 
 (use-package cider
   :ensure t
   :init
   (setq nrepl-hide-special-buffers t
+	;;cider-redirect-server-output-to-repl t
+	;;cider-interactive-eval-output-destination 'output-buffer
+	cider-auto-mode nil
         cider-repl-pop-to-buffer-on-connect 'display-only
         cider-repl-wrap-history t
         cider-prompt-save-file-on-load nil
         cider-repl-use-clojure-font-lock t
-        cider-overlays-use-font-lock t))
+        cider-overlays-use-font-lock t
+	cider-clojure-cli-global-options "-A:perf"
+	cider-test-defining-forms '("deftest" "defspec" "defflow" "defschematest")))
+
+(use-package inf-clojure
+  :ensure t
+  ;; :init
+  ;; (setq inf-clojure-auto-mode nil)
+  )
 
 (use-package smart-mode-line
   :ensure t
@@ -189,11 +199,13 @@
   :ensure t
   :init
   (require 'smartparens-clojure)
+  (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)
-	 (clojure-mode . lsp)
-	 (clojure-mode . cider-mode)))
+	 ;; (clojure-mode . lsp)
+	 (clojure-mode . cider-mode)
+	 ))
 
 (use-package magit
   :ensure t
@@ -204,6 +216,11 @@
   (define-key magit-map (kbd "g") 'custom-git-grep)
   (define-key magit-map (kbd "b") 'magit-blame)
   (setq magit-last-seen-setup-instructions "1.4.0"))
+
+(use-package magit-ido
+  :ensure t
+  :config
+  (setq magit-completing-read-function 'magit-ido-completing-read))
 
 (use-package discover-my-major
   :ensure t
@@ -227,7 +244,8 @@
 	lsp-lens-enable t
 	lsp-signature-auto-activate nil
 	lsp-headerline-breadcrumb-enable nil
-	treemacs-space-between-root-nodes nil))
+	;;treemacs-space-between-root-nodes nil
+	))
 
 (use-package lsp-ui
   :ensure t
@@ -239,20 +257,20 @@
   (define-key lsp-ui-mode-map [remap xref-find-definitions] 'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] 'lsp-ui-peek-find-references))
 
-(use-package treemacs
-  :ensure t
-  :commands lsp-treemacs-errors-list
-  :config
-  (global-set-key (kbd "C-x t t") 'treemacs))
+;; (use-package treemacs
+;;   :ensure t
+;;   :commands lsp-treemacs-errors-list
+;;   :config
+;;   (global-set-key (kbd "C-x t t") 'treemacs))
 
 (use-package all-the-icons
   :ensure t
   :if (display-graphic-p))
 
-(use-package lsp-treemacs
-  :ensure t
-  :config
-  (lsp-treemacs-sync-mode 1))
+;; (use-package lsp-treemacs
+;;   :ensure t
+;;   :config
+;;   (lsp-treemacs-sync-mode 1))
 
 (use-package yasnippet
   :ensure t

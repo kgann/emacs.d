@@ -46,7 +46,49 @@
   (interactive (list
                 (read-string (format "Search for (default `%s'): " (thing-at-point 'word))
                              nil nil (thing-at-point 'word))))
-  (vc-git-grep term "*" (projectile-project-root)))
+  (vc-git-grep term "*" (vc-root-dir)))
+
+(defvar datomic:nrepl nil
+  "Datomic nrepl process")
+
+(defun datomic:kill ()
+  (interactive)
+  (when datomic:nrepl
+    (message "Killing nrepl...")
+    (kill-process datomic:nrepl)))
+
+(defun datomic:connect ()
+  (interactive)
+  (message "Connecting to Datomic nrepl...")
+  (cd (vc-root-dir))
+  (let ((port (with-temp-buffer
+		(insert-file-contents ".nrepl-port")
+		(buffer-string))))
+    (cider-connect-clj `(:host "localhost" :port ,port :project-dir ,(vc-root-dir)))))
+
+(defun datomic:start-nrepl ()
+  (cd (vc-root-dir))
+  (message "Starting Datomic nrepl...")
+  (let* ((cp (concat (shell-command-to-string "bin/classpath")
+		     ":"
+		     (shell-command-to-string "clojure -A:cider -Spath")))
+	 (cmd (list "java"
+		    "-cp"
+		    cp
+		    "clojure.main"
+		    "-m"
+		    "nrepl.cmdline"
+		    "--middleware"
+		    "[cider.nrepl/cider-middleware]"))
+	 (process (apply 'start-process "datomic:nrepl" "datomic:nrepl" cmd)))
+    (set-process-sentinel process (lambda (_proc _s) (setq datomic:nrepl nil)))
+    (setq datomic:nrepl process)
+    (sleep-for 3)))
+
+(defun datomic:repl ()
+  (interactive)
+  (when (not datomic:nrepl) (datomic:start-nrepl))
+  (datomic:connect))
 
 (defun dev-notes ()
   (interactive)
@@ -59,6 +101,14 @@
     (setq lsp-ui-doc-delay 0.1)
     (setq lsp-ui-doc-position 'at-point)
     (lsp-ui-doc-show)))
+
+(defun file-notify-rm-all-watches ()
+  "Remove all existing file notification watches from Emacs."
+  (interactive)
+  (maphash
+   (lambda (key _value)
+     (file-notify-rm-watch key))
+   file-notify-descriptors))
 
 (provide 'core-fns)
 ;; core fns
