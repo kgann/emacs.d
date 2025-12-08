@@ -203,7 +203,7 @@
   :hook ((clojure-mode . rainbow-delimiters-mode)
 	 (clojure-mode . turn-on-eldoc-mode)
 	 (clojure-mode . flycheck-mode)
-	 ;; (clojure-mode . lsp)
+	 (clojure-mode . lsp)
 	 (clojure-mode . cider-mode)
 	 ))
 

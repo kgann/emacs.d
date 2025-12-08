@@ -48,14 +48,14 @@
                              nil nil (thing-at-point 'word))))
   (vc-git-grep term "*" (vc-root-dir)))
 
-(defvar datomic:nrepl nil
-  "Datomic nrepl process")
+(defvar datomic:nrepl "datomic:nrepl")
 
 (defun datomic:kill ()
   (interactive)
-  (when datomic:nrepl
-    (message "Killing nrepl...")
-    (kill-process datomic:nrepl)))
+  (let ((proc (get-process datomic:nrepl)))
+    (when proc
+      (message "Killing nrepl...")
+      (kill-process proc))))
 
 (defun datomic:connect ()
   (interactive)
@@ -67,27 +67,24 @@
     (cider-connect-clj `(:host "localhost" :port ,port :project-dir ,(vc-root-dir)))))
 
 (defun datomic:start-nrepl ()
-  (cd (vc-root-dir))
   (message "Starting Datomic nrepl...")
-  (let* ((cp (concat (shell-command-to-string "bin/classpath")
-		     ":"
-		     (shell-command-to-string "clojure -A:cider -Spath")))
-	 (cmd (list "java"
-		    "-cp"
-		    cp
-		    "clojure.main"
-		    "-m"
-		    "nrepl.cmdline"
-		    "--middleware"
-		    "[cider.nrepl/cider-middleware]"))
-	 (process (apply 'start-process "datomic:nrepl" "datomic:nrepl" cmd)))
-    (set-process-sentinel process (lambda (_proc _s) (setq datomic:nrepl nil)))
-    (setq datomic:nrepl process)
-    (sleep-for 3)))
+  (cd (vc-root-dir))
+  (start-process datomic:nrepl datomic:nrepl
+		 "java"
+		 "-cp"
+		 (concat (shell-command-to-string "bin/classpath") ":"
+			 (shell-command-to-string "clojure -A:cider -Spath"))
+		 "clojure.main"
+		 "-m"
+		 "nrepl.cmdline"
+		 "--middleware"
+		 "[cider.nrepl/cider-middleware]")
+  (sleep-for 3))
 
 (defun datomic:repl ()
   (interactive)
-  (when (not datomic:nrepl) (datomic:start-nrepl))
+  (let ((proc (get-process datomic:nrepl)))
+    (when (not proc) (datomic:start-nrepl)))
   (datomic:connect))
 
 (defun dev-notes ()
